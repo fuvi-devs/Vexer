@@ -1,0 +1,12 @@
+$ tsx scripts/run-oxlint.ts .
+
+  ! Unused oxlint-disable directive (no problems were reported).
+    ,-[packages/experimental/client-ui-cot-translation/src/index.ts:82:9]
+ 81 |       using _listener = addAbortListener(signal, () => {
+ 82 |         // oxlint-disable-next-line typescript/prefer-promise-reject-errors -- Preserve the caller's arbitrary cancellation reason.
+    :         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 83 |         cancelled.reject(signal.reason)
+    `----
+
+Found 1 warning and 0 errors.
+Finished in 250.2s on 5705 files with 90 rules using 12 threads.

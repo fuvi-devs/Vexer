@@ -1,0 +1,72 @@
+version: '3.8'
+
+services:
+  vexer-agent:
+    image: ghcr.io/${GITHUB_REPOSITORY:-mahmoud/vexer-agent}:latest
+    container_name: vexer-agent
+    restart: unless-stopped
+    ports:
+      - "7090:7090"
+    volumes:
+      - vexer-data:/home/vexer/.vexer-agent
+      - ./config:/app/config:ro
+    environment:
+      - DSH_HOME=/home/vexer/.vexer-agent
+      - NODE_OPTIONS=--import tsx/esm
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7090/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    restart: unless-stopped
+
+  # Optional: Redis for hot memory tier
+  redis:
+    image: redis:7-alpine
+    container_name: vexer-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    command: redis-server --appendonly yes
+
+  # Optional: ClickHouse for cold memory tier
+  clickhouse:
+    image: clickhouse/clickhouse-server:24.8-alpine
+    container_name: vexer-clickhouse
+    restart: unless-stopped
+    ports:
+      - "8123:8123"
+      - "9000:9000"
+    volumes:
+      - clickhouse-data:/var/lib/clickhouse
+    environment:
+      - CLICKHOUSE_DB=vexer_memory
+      - CLICKHOUSE_USER=vexer
+      - CLICKHOUSE_PASSWORD=vexer
+    ulimits:
+      nofile:
+        soft: 262144
+        hard: 262144
+
+  # Optional: Kill Bill for billing
+  killbill:
+    image: killbill/killbill:0.24
+    container_name: vexer-killbill
+    restart: unless-stopped
+    ports:
+      - "8081:8080"
+    environment:
+      - KILLBILL_DATABASE_URL=jdbc:h2:file:/var/lib/killbill
+      - KILLBILL_DATABASE_USER=sa
+      - KILLBILL_DATABASE_PASSWORD=
+    volumes:
+      - killbill-data:/var/lib/killbill
+
+volumes:
+  vexer-data:
+  redis-data:
+  clickhouse-data:
+  killbill-data:

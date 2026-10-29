@@ -1,0 +1,14 @@
+{
+  "extends": "../../../tsconfig.base.json",
+  "compilerOptions": { "rootDir": "src", "outDir": "lib/types" },
+  "include": ["src"],
+  "references": [
+    { "path": "../../../vendor/cosmokit" },
+    { "path": "../../../vendor/cordis" },
+    { "path": "../../../vendor/schemastery" },
+    { "path": "../../memory/memory-core" },
+    { "path": "../../learning/learning-core" },
+    { "path": "../../security/threat-intel-core" },
+    { "path": "../../infra/kafka-core" }
+  ]
+}

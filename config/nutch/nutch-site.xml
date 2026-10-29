@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+  <property>
+    <name>http.agent.name</name>
+    <value>Vexer Agent Crawler</value>
+  </property>
+  <property>
+    <name>http.agent.version</name>
+    <value>1.0.0</value>
+  </property>
+  <property>
+    <name>http.agent.description</name>
+    <value>Vexer Agent web crawler for knowledge acquisition</value>
+  </property>
+  <property>
+    <name>http.agent.url</name>
+    <value>https://vexer.ai</value>
+  </property>
+  <property>
+    <name>http.agent.email</name>
+    <value>contact@vexer.ai</value>
+  </property>
+  <property>
+    <name>plugin.includes</name>
+    <value>protocol-http|urlfilter-regex|parse-(html|tika)|index-(basic|anchor)|scoring-opic|urlnormalizer-(pass|regex|basic)</value>
+  </property>
+  <property>
+    <name>storage.data.store.class</name>
+    <value>org.apache.gora.memory.store.MemoryStore</value>
+  </property>
+</configuration>

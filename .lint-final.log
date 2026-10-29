@@ -1,0 +1,771 @@
+$ tsx scripts/compile-referenced-projects.ts host-contracts && npm run lint:contracts-ready
+generate-typert: wrote 30 Typert artifact(s) for 30 package(s) in 110.1s
+npm warn Unknown env config "manage-package-manager-versions". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+npm warn Unknown project config "network-concurrency". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+npm warn Unknown project config "child-concurrency". This will stop working in the next major version of npm. See `npm help npmrc` for supported config options.
+
+> @deepseek-ai/dsh-root@1.0.0 lint:contracts-ready
+> tsx scripts/run-oxlint.ts .
+
+runtime: VirtualAlloc of 8192 bytes failed with errno=1455
+fatal error: runtime: VirtualAlloc of 8192 bytes failed with errno=1455
+fatal error: out of memory
+out of memory
+runtime: VirtualAlloc of 8192 bytes failed with errno=1455
+fatal error: out of memory
+
+runtime stack:
+runtime.throw({0x7ff7aa52adce?, 0x4827fffc30?})
+	runtime/panic.go:1229 +0x4d fp=0x4827fffbf8 sp=0x4827fffbc8 pc=0x7ff7a9cc372d
+runtime.sysUsedOS(0xd3c65e26000, 0x2000)
+	runtime/mem_windows.go:83 +0x1e5 fp=0x4827fffc78 sp=0x4827fffbf8 pc=0x7ff7a9c64b65
+runtime.sysUsed(...)
+	runtime/mem.go:91
+runtime.(*mheap).allocSpan(0x7ff7ab1b5c60, 0x1, 0x0, 0x6)
+	runtime/mheap.go:1404 +0x4a7 fp=0x4827fffd28 sp=0x4827fffc78 pc=0x7ff7a9c7aa67
+runtime.(*mheap).alloc.func1()
+	runtime/mheap.go:1017 +0x5c fp=0x4827fffd70 sp=0x4827fffd28 pc=0x7ff7a9c7a21c
+runtime.systemstack(0xd39f918b0e0)
+	runtime/asm_amd64.s:562 +0x49 fp=0x4827fffd80 sp=0x4827fffd70 pc=0x7ff7a9cc8b09
+
+goroutine 163668 gp=0xd39fc87c1e0 m=34 mp=0xd39f5481008 [running]:
+runtime.systemstack_switch()
+	runtime/asm_amd64.s:516 +0x8 fp=0xd3c1f2e6160 sp=0xd3c1f2e6150 pc=0x7ff7a9cc8aa8
+runtime.(*mheap).alloc(0x0?, 0xac28e?, 0x67?)
+	runtime/mheap.go:1011 +0x57 fp=0xd3c1f2e61a8 sp=0xd3c1f2e6160 pc=0x7ff7a9c7a177
+runtime.(*mcentral).grow(0x2000?)
+	runtime/mcentral.go:253 +0x36 fp=0xd3c1f2e61d8 sp=0xd3c1f2e61a8 pc=0x7ff7a9c62996
+runtime.(*mcentral).cacheSpan(0x7ff7ab1c6578)
+	runtime/mcentral.go:171 +0x454 fp=0xd3c1f2e6250 sp=0xd3c1f2e61d8 pc=0x7ff7a9c62814
+runtime.(*mcache).refill(0x23b704e1b90, 0x6?)
+	runtime/mcache.go:205 +0x16b fp=0xd3c1f2e6290 sp=0xd3c1f2e6250 pc=0x7ff7a9c61deb
+runtime.(*mcache).nextFree(0x23b704e1b90, 0x6)
+	runtime/malloc.go:1006 +0x7e fp=0xd3c1f2e62c8 sp=0xd3c1f2e6290 pc=0x7ff7a9c5e2be
+runtime.mallocgcSmallScanNoHeader(0x18, 0x7ff7aa329980)
+	runtime/malloc.go:1529 +0x145 fp=0xd3c1f2e6328 sp=0xd3c1f2e62c8 pc=0x7ff7a9c5eb65
+runtime.mallocgc(0x18, 0x7ff7aa329980, 0x1)
+	runtime/malloc.go:1150 +0xa5 fp=0xd3c1f2e6358 sp=0xd3c1f2e6328 pc=0x7ff7a9cc16e5
+runtime.convTslice({0xd3c65b371d0, 0x1, 0x1})
+	runtime/iface.go:443 +0x45 fp=0xd3c1f2e6380 sp=0xd3c1f2e6358 pc=0x7ff7a9cc14a5
+github.com/microsoft/typescript-go/internal/tsoptions.convertArrayLiteralExpressionToJson(0xd3c65adbc08, {0xd3c65af9c88, 0x1, 0x7ff7a9e58cdf?}, 0x0, 0x98?)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:702 +0x326 fp=0xd3c1f2e6440 sp=0xd3c1f2e6380 pc=0x7ff7a9f44846
+github.com/microsoft/typescript-go/internal/tsoptions.convertPropertyValueToJson(0xd3c65adbc08, 0x29?, 0x0, 0x1, 0xd3c65ad5ce8?)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:862 +0x14b fp=0xd3c1f2e64b8 sp=0xd3c1f2e6440 pc=0x7ff7a9f4546b
+github.com/microsoft/typescript-go/internal/tsoptions.convertObjectLiteralExpressionToJson(0xd3c65adbc08, 0x1, 0xd3c65e248c0?, 0x7ff7ab19dda0, 0xd3c1f2e6b18)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:787 +0x4e5 fp=0xd3c1f2e65f8 sp=0xd3c1f2e64b8 pc=0x7ff7a9f44e05
+github.com/microsoft/typescript-go/internal/tsoptions.convertPropertyValueToJson(0xd3c65adbc08, 0xd39f4d16870?, 0x7ff7ab19dda0, 0x5?, 0xd3c65ad5a78?)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:860 +0x19a fp=0xd3c1f2e6670 sp=0xd3c1f2e65f8 pc=0x7ff7a9f454ba
+github.com/microsoft/typescript-go/internal/tsoptions.convertObjectLiteralExpressionToJson(0xd3c65adbc08, 0x1, 0xd3c65e24910?, 0x7ff7ab1a05a0, 0xd3c1f2e6b18)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:787 +0x4e5 fp=0xd3c1f2e67b0 sp=0xd3c1f2e6670 pc=0x7ff7a9f44e05
+github.com/microsoft/typescript-go/internal/tsoptions.convertPropertyValueToJson(0xd3c65adbc08, 0xd39f4d168a0?, 0x7ff7ab1a05a0, 0xf?, 0x7ff7a9f46287?)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:860 +0x19a fp=0xd3c1f2e6828 sp=0xd3c1f2e67b0 pc=0x7ff7a9f454ba
+github.com/microsoft/typescript-go/internal/tsoptions.convertObjectLiteralExpressionToJson(0xd3c65adbc08, 0x1, 0xd3c65e24960?, 0x7ff7ab1a0640, 0xd3c1f2e6b18)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:787 +0x4e5 fp=0xd3c1f2e6968 sp=0xd3c1f2e6828 pc=0x7ff7a9f44e05
+github.com/microsoft/typescript-go/internal/tsoptions.convertPropertyValueToJson(0xd3c65adbc08, 0x12?, 0x7ff7ab1a0640, 0xa0?, 0x23b704e1b90?)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:860 +0x19a fp=0xd3c1f2e69e0 sp=0xd3c1f2e6968 pc=0x7ff7a9f454ba
+github.com/microsoft/typescript-go/internal/tsoptions.convertToJson(0xd3c65afa6c0?, 0xd3c1f2e6a50?, 0xe5?, 0x60?)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:823 +0x2c fp=0xd3c1f2e6a18 sp=0xd3c1f2e69e0 pc=0x7ff7a9f452ac
+github.com/microsoft/typescript-go/internal/tsoptions.convertConfigFileToObject(0xd3c65adbc08, 0xd3c1f2e6b18)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:341 +0x16c fp=0xd3c1f2e6a88 sp=0xd3c1f2e6a18 pc=0x7ff7a9f41ecc
+github.com/microsoft/typescript-go/internal/tsoptions.parseOwnConfigOfJsonSourceFile(0xd3c65adbc08, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0xd3c63418700, 0x22}, {0xd3c63418723, 0x12})
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:268 +0x348 fp=0xd3c1f2e6b48 sp=0xd3c1f2e6a88 pc=0x7ff7a9f40da8
+github.com/microsoft/typescript-go/internal/tsoptions.parseConfig(0x0, 0xd3c65b4f3b0, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0xd3c63418700?, 0x7ff7aa31f640?}, {0xd3c63418723, 0x12}, {0xd3c65b01540, 0x2, ...}, ...)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1080 +0x1f0 fp=0xd3c1f2e6d88 sp=0xd3c1f2e6b48 pc=0x7ff7a9f46e50
+github.com/microsoft/typescript-go/internal/tsoptions.ParseExtendedConfig({0xd3c63418700, 0x35}, {0xd3c63418800, 0x35}, {0xd3c65b01540, 0x2, 0x2}, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0x0, ...})
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1043 +0x246 fp=0xd3c1f2e6e50 sp=0xd3c1f2e6d88 pc=0x7ff7a9f46ba6
+github.com/microsoft/typescript-go/internal/tsoptions.getExtendedConfig(0xd3c65b4f290, {0xd3c63418700, 0x35}, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0xd3c65b01540, 0x2, 0x2}, {0x0, 0x0}, ...)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1002 +0x14a fp=0xd3c1f2e6f30 sp=0xd3c1f2e6e50 pc=0x7ff7a9f465aa
+github.com/microsoft/typescript-go/internal/tsoptions.parseConfig.func1(0xd3c1f2e7190, {0xd3c63418700, 0x35})
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1092 +0xb2 fp=0xd3c1f2e7080 sp=0xd3c1f2e6f30 pc=0x7ff7a9f47e92
+github.com/microsoft/typescript-go/internal/tsoptions.parseConfig(0x0, 0xd3c65b4f290, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0xd3c63418580?, 0x7ff7aa31f640?}, {0xd3c634185a3, 0x19}, {0xd3c65b01540, 0x2, ...}, ...)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1156 +0x10b6 fp=0xd3c1f2e72c0 sp=0xd3c1f2e7080 pc=0x7ff7a9f47d16
+github.com/microsoft/typescript-go/internal/tsoptions.ParseExtendedConfig({0xd3c63418580, 0x3c}, {0xd3c634185c0, 0x3c}, {0xd3c65b36eb0, 0x1, 0x1}, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0x0, ...})
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1043 +0x246 fp=0xd3c1f2e7388 sp=0xd3c1f2e72c0 pc=0x7ff7a9f46ba6
+github.com/microsoft/typescript-go/internal/tsoptions.getExtendedConfig(0xd3c65b4f0e0, {0xd3c63418580, 0x3c}, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0xd3c65b36eb0, 0x1, 0x1}, {0x0, 0x0}, ...)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1002 +0x14a fp=0xd3c1f2e7468 sp=0xd3c1f2e7388 pc=0x7ff7a9f465aa
+github.com/microsoft/typescript-go/internal/tsoptions.parseConfig.func1(0xd3c1f2e76c8, {0xd3c63418580, 0x3c})
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1092 +0xb2 fp=0xd3c1f2e75b8 sp=0xd3c1f2e7468 pc=0x7ff7a9f47e92
+github.com/microsoft/typescript-go/internal/tsoptions.parseConfig(0x0, 0xd3c65b4f0e0, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0xd3c65c1aa50?, 0xd6?}, {0xd3c65c1aa50, 0x4e}, {0xd3c65b36eb0, 0x1, ...}, ...)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1156 +0x10b6 fp=0xd3c1f2e77f8 sp=0xd3c1f2e75b8 pc=0x7ff7a9f47d16
+github.com/microsoft/typescript-go/internal/tsoptions.parseJsonConfigFileContentWorker(0x0, 0xd3c65b4f0e0, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0xd3c65c1aa50, 0x40}, 0x0, 0x0, {0xd3c65c1aa50, 0x4e}, ...)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1219 +0x1dc fp=0xd3c1f2e7d88 sp=0xd3c1f2e77f8 pc=0x7ff7a9f4895c
+github.com/microsoft/typescript-go/internal/tsoptions.ParseJsonSourceFileConfigFileContent(...)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:749
+github.com/microsoft/typescript-go/internal/tsoptions.GetParsedCommandLineOfConfigFilePath({0xd3c65c1aa50, 0x4e}, {0xd3c6344b3b0, 0x4e}, 0x0, 0x0, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0x0, 0x0})
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1842 +0x1c5 fp=0xd3c1f2e7e50 sp=0xd3c1f2e7d88 pc=0x7ff7a9f4f005
+github.com/typescript-eslint/tsgolint/internal/utils.(*compilerHost).GetResolvedProjectReference(0xd3c64e4f600, {0xd3c65c1aa50, 0x4e}, {0xd3c6344b3b0, 0x4e})
+	github.com/typescript-eslint/tsgolint/internal/utils/host.go:114 +0x99 fp=0xd3c1f2e7eb8 sp=0xd3c1f2e7e50 pc=0x7ff7aa1a7179
+github.com/microsoft/typescript-go/internal/compiler.(*projectReferenceParseTask).parse(0xd3c65c1c1e0, 0xffffffffffffffff?)
+	github.com/microsoft/typescript-go/internal/compiler/projectreferenceparser.go:24 +0x15a fp=0xd3c1f2e7f60 sp=0xd3c1f2e7eb8 pc=0x7ff7aa179e7a
+github.com/microsoft/typescript-go/internal/compiler.(*projectReferenceParser).start.func1()
+	github.com/microsoft/typescript-go/internal/compiler/projectreferenceparser.go:63 +0x25 fp=0xd3c1f2e7fa0 sp=0xd3c1f2e7f60 pc=0x7ff7aa17a2e5
+github.com/microsoft/typescript-go/internal/core.(*parallelWorkGroup).Queue.func1()
+	github.com/microsoft/typescript-go/internal/core/workgroup.go:40 +0x13 fp=0xd3c1f2e7fb0 sp=0xd3c1f2e7fa0 pc=0x7ff7a9dcebd3
+sync.(*WaitGroup).Go.func1()
+	sync/waitgroup.go:258 +0x4a fp=0xd3c1f2e7fe0 sp=0xd3c1f2e7fb0 pc=0x7ff7a9cd22ea
+runtime.goexit({})
+	runtime/asm_amd64.s:1771 +0x1 fp=0xd3c1f2e7fe8 sp=0xd3c1f2e7fe0 pc=0x7ff7a9cca741
+created by sync.(*WaitGroup).Go in goroutine 1
+	sync/waitgroup.go:238 +0x73
+
+goroutine 1 gp=0xd39f4c24000 m=nil [sync.WaitGroup.Wait]:
+runtime.gopark(0xd3a2ab19008?, 0xd3c65bf1188?, 0xe0?, 0xd5?, 0x7ff7a9cc16e5?)
+	runtime/proc.go:462 +0xce fp=0xd3c1e23e3e8 sp=0xd3c1e23e3c8 pc=0x7ff7a9cc384e
+runtime.goparkunlock(...)
+	runtime/proc.go:468
+runtime.semacquire1(0xd3c58fab720, 0x0, 0x1, 0x0, 0x19)
+	runtime/sema.go:192 +0x245 fp=0xd3c1e23e450 sp=0xd3c1e23e3e8 pc=0x7ff7a9ca2fa5
+sync.runtime_SemacquireWaitGroup(0xd3c65bfedf0?, 0xd8?)
+	runtime/sema.go:114 +0x2e fp=0xd3c1e23e488 sp=0xd3c1e23e450 pc=0x7ff7a9cc4c2e
+sync.(*WaitGroup).Wait(0xd3c58fab718)
+	sync/waitgroup.go:206 +0x85 fp=0xd3c1e23e4b0 sp=0xd3c1e23e488 pc=0x7ff7a9cd2165
+github.com/microsoft/typescript-go/internal/core.(*parallelWorkGroup).RunAndWait(0xd3c65bde1e0?)
+	github.com/microsoft/typescript-go/internal/core/workgroup.go:46 +0x45 fp=0xd3c1e23e4e8 sp=0xd3c1e23e4b0 pc=0x7ff7a9dcec25
+github.com/microsoft/typescript-go/internal/compiler.(*projectReferenceParser).parse(0xd3c65bde1e0, {0xd3c65bde230, 0x9, 0x9})
+	github.com/microsoft/typescript-go/internal/compiler/projectreferenceparser.go:51 +0x6c fp=0xd3c1e23e518 sp=0xd3c1e23e4e8 pc=0x7ff7aa17a0ec
+github.com/microsoft/typescript-go/internal/compiler.(*fileLoader).addProjectReferenceTasks(0xd3c64856c08, 0x0)
+	github.com/microsoft/typescript-go/internal/compiler/fileloader.go:312 +0x226 fp=0xd3c1e23e5c8 sp=0xd3c1e23e518 pc=0x7ff7aa159886
+github.com/microsoft/typescript-go/internal/compiler.processAllProgramFiles({{0x7ff7aaa51af0, 0xd3c64e4f600}, 0xd3ad3b67b80, 0x1, 0x1, 0x0, {0x0, 0x0}, {0x0, 0x0}, ...}, ...)
+	github.com/microsoft/typescript-go/internal/compiler/fileloader.go:149 +0x43e fp=0xd3c1e23ed90 sp=0xd3c1e23e5c8 pc=0x7ff7aa157bbe
+github.com/microsoft/typescript-go/internal/compiler.NewProgram({{0x7ff7aaa51af0, 0xd3c64e4f600}, 0xd3ad3b67b80, 0x1, 0x1, 0x0, {0x0, 0x0}, {0x0, 0x0}, ...})
+	github.com/microsoft/typescript-go/internal/compiler/program.go:279 +0x25c fp=0xd3c1e23efb0 sp=0xd3c1e23ed90 pc=0x7ff7aa165b3c
+github.com/typescript-eslint/tsgolint/internal/utils.CreateProgram(0x0, {0x7ff7aaa55260, 0xd39f4d364e0}, {0xd39f5eee910, 0x36}, {0xd39f5eee910, 0x44}, {0x7ff7aaa51af0, 0xd3c64e4f600}, 0x0)
+	github.com/typescript-eslint/tsgolint/internal/utils/create_program.go:87 +0x308 fp=0xd3c1e23f1f0 sp=0xd3c1e23efb0 pc=0x7ff7aa1a5108
+github.com/typescript-eslint/tsgolint/internal/linter.RunLinter({0x0, {0xd39f4d442a0, 0x22}, {0xd39f4be2c30, {0xd39f5843688, 0x35, 0x47}}, 0xc, {0x7ff7aaa55260, 0xd39f4d364e0}, ...})
+	github.com/typescript-eslint/tsgolint/internal/linter/linter.go:103 +0x39f fp=0xd3c1e23f738 sp=0xd3c1e23f1f0 pc=0x7ff7aa1b069f
+main.runHeadless({0xd39f4d02060, 0x0, 0x0})
+	github.com/typescript-eslint/tsgolint/cmd/tsgolint/headless.go:413 +0x16d2 fp=0xd3c1e23fb88 sp=0xd3c1e23f738 pc=0x7ff7aa2a74d2
+main.runMain()
+	github.com/typescript-eslint/tsgolint/cmd/tsgolint/main.go:432 +0x7a fp=0xd3c1e23ff30 sp=0xd3c1e23fb88 pc=0x7ff7aa2aad7a
+main.main()
+	github.com/typescript-eslint/tsgolint/cmd/tsgolint/main.go:658 +0x13 fp=0xd3c1e23ff48 sp=0xd3c1e23ff30 pc=0x7ff7aa2ac893
+runtime.main()
+	runtime/proc.go:290 +0x2c7 fp=0xd3c1e23ffe0 sp=0xd3c1e23ff48 pc=0x7ff7a9c904c7
+runtime.goexit({})
+	runtime/asm_amd64.s:1771 +0x1 fp=0xd3c1e23ffe8 sp=0xd3c1e23ffe0 pc=0x7ff7a9cca741
+
+goroutine 2 gp=0xd39f4c24780 m=nil [force gc (idle), 2 minutes]:
+runtime.gopark(0x4aed175a97a0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	runtime/proc.go:462 +0xce fp=0xd39f4c27fa8 sp=0xd39f4c27f88 pc=0x7ff7a9cc384e
+runtime.goparkunlock(...)
+	runtime/proc.go:468
+runtime.forcegchelper()
+	runtime/proc.go:375 +0xb8 fp=0xd39f4c27fe0 sp=0xd39f4c27fa8 pc=0x7ff7a9c907b8
+runtime.goexit({})
+	runtime/asm_amd64.s:1771 +0x1 fp=0xd39f4c27fe8 sp=0xd39f4c27fe0 pc=0x7ff7a9cca741
+created by runtime.init.7 in goroutine 1
+	runtime/proc.go:363 +0x1a
+
+goroutine 18 gp=0xd39f4c881e0 m=nil [GC sweep wait, 2 minutes]:
+runtime.gopark(0x1?, 0x0?, 0x0?, 0x0?, 0x0?)
+	runtime/proc.go:462 +0xce fp=0xd39f4c91f88 sp=0xd39f4c91f68 pc=0x7ff7a9cc384e
+runtime.goparkunlock(...)
+	runtime/proc.go:468
+runtime.bgsweep(0xd39f4bce080)
+	runtime/mgcsweep.go:324 +0x151 fp=0xd39f4c91fc8 sp=0xd39f4c91f88 pc=0x7ff7a9c76a31
+runtime.gcenable.gowrap1()
+	runtime/mgc.go:214 +0x17 fp=0xd39f4c91fe0 sp=0xd39f4c91fc8 pc=0x7ff7a9c67f37
+runtime.goexit({})
+	runtime/asm_amd64.s:1771 +0x1 fp=0xd39f4c91fe8 sp=0xd39f4c91fe0 pc=0x7ff7a9cca741
+created by runtime.gcenable in goroutine 1
+	runtime/mgc.go:214 +0x66
+
+goroutine 19 gp=0xd39f4c883c0 m=nil [GC scavenge wait, 2 minutes]:
+runtime.gopark(0x10000?, 0x41068b?, 0x0?, 0x0?, 0x0?)
+	runtime/proc.go:462 +0xce fp=0xd39f4c93f78 sp=0xd39f4c93f58 pc=0x7ff7a9cc384e
+runtime.goparkunlock(...)
+	runtime/proc.go:468
+runtime.(*scavengerState).park(0x7ff7ab1a97c0)
+	runtime/mgcscavenge.go:425 +0x49 fp=0xd39f4c93fa8 sp=0xd39f4c93f78 pc=0x7ff7a9c744a9
+runtime.bgscavenge(0xd39f4bce080)
+	runtime/mgcscavenge.go:658 +0x59 fp=0xd39f4c93fc8 sp=0xd39f4c93fa8 pc=0x7ff7a9c74a39
+runtime.gcenable.gowrap2()
+	runtime/mgc.go:215 +0x17 fp=0xd39f4c93fe0 sp=0xd39f4c93fc8 pc=0x7ff7a9c67ef7
+runtime.goexit({})
+	runtime/asm_amd64.s:1771 +0x1 fp=0xd39f4c93fe8 sp=0xd39f4c93fe0 pc=0x7ff7a9cca741
+created by runtime.gcenable in goroutine 1
+	runtime/mgc.go:215 +0xa5
+
+goroutine 20 gp=0xd39f4c885a0 m=nil [GOMAXPROCS updater (idle), 15 minutes]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	runtime/proc.go:462 +0xce fp=0xd39f4c8df88 sp=0xd39f4c8df68 pc=0x7ff7a9cc384e
+runtime.goparkunlock(...)
+	runtime/proc.go:468
+runtime.updateMaxProcsGoroutine()
+	runtime/proc.go:7095 +0xe7 fp=0xd39f4c8dfe0 sp=0xd39f4c8df88 pc=0x7ff7a9c9ed67
+runtime.goexit({})
+	runtime/asm_amd64.s:1771 +0x1 fp=0xd39f4c8dfe8 sp=0xd39f4c8dfe0 pc=0x7ff7a9cca741
+created by runtime.defaultGOMAXPROCSUpdateEnable in goroutine 1
+	runtime/proc.go:7083 +0x37
+
+goroutine 34 gp=0xd39f4d08000 m=nil [finalizer wait, 15 minutes]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	runtime/proc.go:462 +0xce fp=0xd39f4d0fe20 sp=0xd39f4d0fe00 pc=0x7ff7a9cc384e
+runtime.runFinalizers()
+	runtime/mfinal.go:210 +0x107 fp=0xd39f4d0ffe0 sp=0xd39f4d0fe20 pc=0x7ff7a9c66ec7
+runtime.goexit({})
+	runtime/asm_amd64.s:1771 +0x1 fp=0xd39f4d0ffe8 sp=0xd39f4d0ffe0 pc=0x7ff7a9cca741
+created by runtime.createfing in goroutine 1
+	runtime/mfinal.go:172 +0x3d
+
+goroutine 3 gp=0xd39f4c24d20 m=nil [cleanup wait, 15 minutes]:
+runtime.gopark(0x101000000000000?, 0x57?, 0x3?, 0x0?, 0x7ff7ab12dbc0?)
+	runtime/proc.go:462 +0xce fp=0xd39f4c2bf68 sp=0xd39f4c2bf48 pc=0x7ff7a9cc384e
+runtime.goparkunlock(...)
+	runtime/proc.go:468
+runtime.(*cleanupQueue).dequeue(0x7ff7ab1a9b20)
+	runtime/mcleanup.go:522 +0xd4 fp=0xd39f4c2bfa0 sp=0xd39f4c2bf68 pc=0x7ff7a9c63d54
+runtime.runCleanups()
+	runtime/mcleanup.go:718 +0x45 fp=0xd39f4c2bfe0 sp=0xd39f4c2bfa0 pc=0x7ff7a9c643c5
+runtime.goexit({})
+	runtime/asm_amd64.s:1771 +0x1 fp=0xd39f4c2bfe8 sp=0xd39f4c2bfe0 pc=0x7ff7a9cca741
+created by runtime.(*cleanupQueue).createGs in goroutine 1
+	runtime/mcleanup.go:672 +0xa5
+
+goroutine 35 gp=0xd39f4d081e0 m=nil [GC worker (idle), 10 minutes]:
+runtime.gopark(0x7ff7ab1f4aa0?, 0x3?, 0xd0?, 0x83?, 0x0?)
+	runtime/proc.go:462 +0xce fp=0xd39f4d11f40 sp=0xd39f4d11f20 pc=0x7ff7a9cc384e
+runtime.gcBgMarkWorker(0xd39f4fd7810)
+	runtime/mgc.go:1791 +0xeb fp=0xd39f4d11fc8 sp=0xd39f4d11f40 pc=0x7ff7a9c6a86b
+runtime.gcBgMarkStartWorkers.gowrap1()
+	runtime/mgc.go:1695 +0x17 fp=0xd39f4d11fe0 sp=0xd39f4d11fc8 pc=0x7ff7a9c6a757
+runtime.goexit({})
+	runtime/asm_amd64.s:1771 +0x1 fp=0xd39f4d11fe8 sp=0xd39f4d11fe0 pc=0x7ff7a9cca741
+created by runtime.gcBgMarkStartWorkers in goroutine 1
+	runtime/mgc.go:1695 +0x105
+
+goroutine 36 gp=0xd39f4d083c0 m=nil [GC worker (idle), 2 minutes]:
+runtime.gopark(0x7ff7ab1f4aa0?, 0x1?, 0x70?, 0xaa?, 0x0?)
+	runtime/proc.go:462 +0xce fp=0xd39f4d0bf40 sp=0xd39f4d0bf20 pc=0x7ff7a9cc384e
+runtime.gcBgMarkWorker(0xd39f4fd7810)
+	runtime/mgc.go:1791 +0xeb fp=0xd39f4d0bfc8 sp=0xd39f4d0bf40 pc=0x7ff7a9c6a86b
+runtime.gcBgMarkStartWorkers.gowrap1()
+	runtime/mgc.go:1695 +0x17 fp=0xd39f4d0bfe0 sp=0xd39f4d0bfc8 pc=0x7ff7a9c6a757
+runtime.goexit({})
+	runtime/asm_amd64.s:1771 +0x1 fp=0xd39f4d0bfe8 sp=0xd39f4d0bfe0 pc=0x7ff7a9cca741
+created by runtime.gcBgMarkStartWorkers in goroutine 1
+	runtime/mgc.go:1695 +0x105
+
+goroutine 37 gp=0xd39f4d085a0 m=nil [GC worker (idle), 2 minutes]:
+runtime.gopark(0x7ff7ab1f4aa0?, 0x1?, 0x4?, 0xe1?, 0x0?)
+	runtime/proc.go:462 +0xce fp=0xd39f4d0df40 sp=0xd39f4d0df20 pc=0x7ff7a9cc384e
+runtime.gcBgMarkWorker(0xd39f4fd7810)
+	runtime/mgc.go:1791 +0xeb fp=0xd39f4d0dfc8 sp=0xd39f4d0df40 pc=0x7ff7a9c6a86b
+runtime.gcBgMarkStartWorkers.gowrap1()
+	runtime/mgc.go:1695 +0x17 fp=0xd39f4d0dfe0 sp=0xd39f4d0dfc8 pc=0x7ff7a9c6a757
+runtime.goexit({})
+	runtime/asm_amd64.s:1771 +0x1 fp=0xd39f4d0dfe8 sp=0xd39f4d0dfe0 pc=0x7ff7a9cca741
+created by runtime.gcBgMarkStartWorkers in goroutine 1
+	runtime/mgc.go:1695 +0x105
+
+goroutine 38 gp=0xd39f4d08780 m=nil [GC worker (idle), 10 minutes]:
+runtime.gopark(0x7ff7ab1f4aa0?, 0x3?, 0x40?, 0x10?, 0x0?)
+	runtime/proc.go:462 +0xce fp=0xd39f4fdff40 sp=0xd39f4fdff20 pc=0x7ff7a9cc384e
+runtime.gcBgMarkWorker(0xd39f4fd7810)
+	runtime/mgc.go:1791 +0xeb fp=0xd39f4fdffc8 sp=0xd39f4fdff40 pc=0x7ff7a9c6a86b
+runtime.gcBgMarkStartWorkers.gowrap1()
+	runtime/mgc.go:1695 +0x17 fp=0xd39f4fdffe0 sp=0xd39f4fdffc8 pc=0x7ff7a9c6a757
+runtime.goexit({})
+	runtime/asm_amd64.s:1771 +0x1 fp=0xd39f4fdffe8 sp=0xd39f4fdffe0 pc=0x7ff7a9cca741
+created by runtime.gcBgMarkStartWorkers in goroutine 1
+	runtime/mgc.go:1695 +0x105
+
+goroutine 39 gp=0xd39f4d08960 m=nil [GC worker (idle), 10 minutes]:
+runtime.gopark(0x4a62a82f43ec?, 0x1?, 0x4?, 0xd4?, 0x0?)
+	runtime/proc.go:462 +0xce fp=0xd39f4fe1f40 sp=0xd39f4fe1f20 pc=0x7ff7a9cc384e
+runtime.gcBgMarkWorker(0xd39f4fd7810)
+	runtime/mgc.go:1791 +0xeb fp=0xd39f4fe1fc8 sp=0xd39f4fe1f40 pc=0x7ff7a9c6a86b
+runtime.gcBgMarkStartWorkers.gowrap1()
+	runtime/mgc.go:1695 +0x17 fp=0xd39f4fe1fe0 sp=0xd39f4fe1fc8 pc=0x7ff7a9c6a757
+runtime.goexit({})
+	runtime/asm_amd64.s:1771 +0x1 fp=0xd39f4fe1fe8 sp=0xd39f4fe1fe0 pc=0x7ff7a9cca741
+created by runtime.gcBgMarkStartWorkers in goroutine 1
+	runtime/mgc.go:1695 +0x105
+
+goroutine 40 gp=0xd39f4d08b40 m=nil [GC worker (idle), 2 minutes]:
+runtime.gopark(0x7ff7ab1f4aa0?, 0x1?, 0x20?, 0xc6?, 0x0?)
+	runtime/proc.go:462 +0xce fp=0xd39f4fdbf40 sp=0xd39f4fdbf20 pc=0x7ff7a9cc384e
+runtime.gcBgMarkWorker(0xd39f4fd7810)
+	runtime/mgc.go:1791 +0xeb fp=0xd39f4fdbfc8 sp=0xd39f4fdbf40 pc=0x7ff7a9c6a86b
+runtime.gcBgMarkStartWorkers.gowrap1()
+	runtime/mgc.go:1695 +0x17 fp=0xd39f4fdbfe0 sp=0xd39f4fdbfc8 pc=0x7ff7a9c6a757
+runtime.goexit({})
+	runtime/asm_amd64.s:1771 +0x1 fp=0xd39f4fdbfe8 sp=0xd39f4fdbfe0 pc=0x7ff7a9cca741
+created by runtime.gcBgMarkStartWorkers in goroutine 1
+	runtime/mgc.go:1695 +0x105
+
+goroutine 41 gp=0xd39f4d08d20 m=nil [GC worker (idle), 10 minutes]:
+runtime.gopark(0x4a62a0a1c744?, 0x1?, 0x44?, 0xb6?, 0x0?)
+	runtime/proc.go:462 +0xce fp=0xd39f4fddf40 sp=0xd39f4fddf20 pc=0x7ff7a9cc384e
+runtime.gcBgMarkWorker(0xd39f4fd7810)
+	runtime/mgc.go:1791 +0xeb fp=0xd39f4fddfc8 sp=0xd39f4fddf40 pc=0x7ff7a9c6a86b
+runtime.gcBgMarkStartWorkers.gowrap1()
+	runtime/mgc.go:1695 +0x17 fp=0xd39f4fddfe0 sp=0xd39f4fddfc8 pc=0x7ff7a9c6a757
+runtime.goexit({})
+	runtime/asm_amd64.s:1771 +0x1 fp=0xd39f4fddfe8 sp=0xd39f4fddfe0 pc=0x7ff7a9cca741
+created by runtime.gcBgMarkStartWorkers in goroutine 1
+	runtime/mgc.go:1695 +0x105
+
+goroutine 42 gp=0xd39f4d08f00 m=nil [GC worker (idle), 10 minutes]:
+runtime.gopark(0x4a62a86b4c48?, 0x3?, 0x40?, 0x65?, 0x0?)
+	runtime/proc.go:462 +0xce fp=0xd39f4fe7f40 sp=0xd39f4fe7f20 pc=0x7ff7a9cc384e
+runtime.gcBgMarkWorker(0xd39f4fd7810)
+	runtime/mgc.go:1791 +0xeb fp=0xd39f4fe7fc8 sp=0xd39f4fe7f40 pc=0x7ff7a9c6a86b
+runtime.gcBgMarkStartWorkers.gowrap1()
+	runtime/mgc.go:1695 +0x17 fp=0xd39f4fe7fe0 sp=0xd39f4fe7fc8 pc=0x7ff7a9c6a757
+runtime.goexit({})
+	runtime/asm_amd64.s:1771 +0x1 fp=0xd39f4fe7fe8 sp=0xd39f4fe7fe0 pc=0x7ff7a9cca741
+created by runtime.gcBgMarkStartWorkers in goroutine 1
+	runtime/mgc.go:1695 +0x105
+
+goroutine 43 gp=0xd39f4d090e0 m=nil [GC worker (idle), 10 minutes]:
+runtime.gopark(0x4a629c9b1128?, 0x3?, 0x5c?, 0x43?, 0x0?)
+	runtime/proc.go:462 +0xce fp=0xd39f4fe9f40 sp=0xd39f4fe9f20 pc=0x7ff7a9cc384e
+runtime.gcBgMarkWorker(0xd39f4fd7810)
+	runtime/mgc.go:1791 +0xeb fp=0xd39f4fe9fc8 sp=0xd39f4fe9f40 pc=0x7ff7a9c6a86b
+runtime.gcBgMarkStartWorkers.gowrap1()
+	runtime/mgc.go:1695 +0x17 fp=0xd39f4fe9fe0 sp=0xd39f4fe9fc8 pc=0x7ff7a9c6a757
+runtime.goexit({})
+	runtime/asm_amd64.s:1771 +0x1 fp=0xd39f4fe9fe8 sp=0xd39f4fe9fe0 pc=0x7ff7a9cca741
+created by runtime.gcBgMarkStartWorkers in goroutine 1
+	runtime/mgc.go:1695 +0x105
+
+goroutine 44 gp=0xd39f4d092c0 m=nil [GC worker (idle), 2 minutes]:
+runtime.gopark(0x7ff7ab1f4aa0?, 0x1?, 0xa8?, 0xf0?, 0x0?)
+	runtime/proc.go:462 +0xce fp=0xd39f4fe3f40 sp=0xd39f4fe3f20 pc=0x7ff7a9cc384e
+runtime.gcBgMarkWorker(0xd39f4fd7810)
+	runtime/mgc.go:1791 +0xeb fp=0xd39f4fe3fc8 sp=0xd39f4fe3f40 pc=0x7ff7a9c6a86b
+runtime.gcBgMarkStartWorkers.gowrap1()
+	runtime/mgc.go:1695 +0x17 fp=0xd39f4fe3fe0 sp=0xd39f4fe3fc8 pc=0x7ff7a9c6a757
+runtime.goexit({})
+	runtime/asm_amd64.s:1771 +0x1 fp=0xd39f4fe3fe8 sp=0xd39f4fe3fe0 pc=0x7ff7a9cca741
+created by runtime.gcBgMarkStartWorkers in goroutine 1
+	runtime/mgc.go:1695 +0x105
+
+goroutine 45 gp=0xd39f4d094a0 m=nil [GC worker (idle), 10 minutes]:
+runtime.gopark(0x4a62a272ba9c?, 0x3?, 0x44?, 0x9b?, 0x0?)
+	runtime/proc.go:462 +0xce fp=0xd39f4fe5f40 sp=0xd39f4fe5f20 pc=0x7ff7a9cc384e
+runtime.gcBgMarkWorker(0xd39f4fd7810)
+	runtime/mgc.go:1791 +0xeb fp=0xd39f4fe5fc8 sp=0xd39f4fe5f40 pc=0x7ff7a9c6a86b
+runtime.gcBgMarkStartWorkers.gowrap1()
+	runtime/mgc.go:1695 +0x17 fp=0xd39f4fe5fe0 sp=0xd39f4fe5fc8 pc=0x7ff7a9c6a757
+runtime.goexit({})
+	runtime/asm_amd64.s:1771 +0x1 fp=0xd39f4fe5fe8 sp=0xd39f4fe5fe0 pc=0x7ff7a9cca741
+created by runtime.gcBgMarkStartWorkers in goroutine 1
+	runtime/mgc.go:1695 +0x105
+
+goroutine 46 gp=0xd39f4d09680 m=nil [GC worker (idle), 10 minutes]:
+runtime.gopark(0x4a62a81d8238?, 0x3?, 0x5c?, 0xac?, 0x0?)
+	runtime/proc.go:462 +0xce fp=0xd39f4feff40 sp=0xd39f4feff20 pc=0x7ff7a9cc384e
+runtime.gcBgMarkWorker(0xd39f4fd7810)
+	runtime/mgc.go:1791 +0xeb fp=0xd39f4feffc8 sp=0xd39f4feff40 pc=0x7ff7a9c6a86b
+runtime.gcBgMarkStartWorkers.gowrap1()
+	runtime/mgc.go:1695 +0x17 fp=0xd39f4feffe0 sp=0xd39f4feffc8 pc=0x7ff7a9c6a757
+runtime.goexit({})
+	runtime/asm_amd64.s:1771 +0x1 fp=0xd39f4feffe8 sp=0xd39f4feffe0 pc=0x7ff7a9cca741
+created by runtime.gcBgMarkStartWorkers in goroutine 1
+	runtime/mgc.go:1695 +0x105
+
+goroutine 50 gp=0xd39f4c25680 m=nil [chan receive]:
+runtime.gopark(0xc003a035adce0?, 0x23b7fee4ef8?, 0xe8?, 0x39?, 0x168?)
+	runtime/proc.go:462 +0xce fp=0xd3bc6f0bc00 sp=0xd3bc6f0bbe0 pc=0x7ff7a9cc384e
+runtime.chanrecv(0xd39f51ce070, 0xd3bc6f0bf00, 0x1)
+	runtime/chan.go:667 +0x4ae fp=0xd3bc6f0bc78 sp=0xd3bc6f0bc00 pc=0x7ff7a9c5698e
+runtime.chanrecv2(0x7ff7aaa4a840?, 0xd39f5723e80?)
+	runtime/chan.go:514 +0x12 fp=0xd3bc6f0bca0 sp=0xd3bc6f0bc78 pc=0x7ff7a9c564d2
+main.runHeadless.func2()
+	github.com/typescript-eslint/tsgolint/cmd/tsgolint/headless.go:337 +0x127 fp=0xd3bc6f0bfb0 sp=0xd3bc6f0bca0 pc=0x7ff7aa2a8087
+sync.(*WaitGroup).Go.func1()
+	sync/waitgroup.go:258 +0x4a fp=0xd3bc6f0bfe0 sp=0xd3bc6f0bfb0 pc=0x7ff7a9cd22ea
+runtime.goexit({})
+	runtime/asm_amd64.s:1771 +0x1 fp=0xd3bc6f0bfe8 sp=0xd3bc6f0bfe0 pc=0x7ff7a9cca741
+created by sync.(*WaitGroup).Go in goroutine 1
+	sync/waitgroup.go:238 +0x73
+
+goroutine 163669 gp=0xd39f659ba40 m=nil [runnable]:
+runtime.gcTrigger.test({0x0?, 0x0?, 0x0?})
+	runtime/mgc.go:706 +0xdc fp=0xd3a00530280 sp=0xd3a00530278 pc=0x7ff7a9c680fc
+runtime.mallocgcSmallScanNoHeader(0x10, 0x7ff7aa343640)
+	runtime/malloc.go:1587 +0x2cf fp=0xd3a005302e0 sp=0xd3a00530280 pc=0x7ff7a9c5ecef
+runtime.mallocgc(0x10, 0x7ff7aa343640, 0x1)
+	runtime/malloc.go:1150 +0xa5 fp=0xd3a00530310 sp=0xd3a005302e0 pc=0x7ff7a9cc16e5
+runtime.growslice(0x0, 0x1?, 0x0?, 0x0?, 0x7ff7aa343640)
+	runtime/slice.go:273 +0x507 fp=0xd3a00530380 sp=0xd3a00530310 pc=0x7ff7a9cc53a7
+github.com/microsoft/typescript-go/internal/tsoptions.convertArrayLiteralExpressionToJson(0xd3c646cf888, {0xd3c65c883d8, 0x1, 0x7ff7a9e58cdf?}, 0x0, 0xa0?)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:699 +0x268 fp=0xd3a00530440 sp=0xd3a00530380 pc=0x7ff7a9f44788
+github.com/microsoft/typescript-go/internal/tsoptions.convertPropertyValueToJson(0xd3c646cf888, 0x28?, 0x0, 0x1, 0xd3c65c8d060?)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:862 +0x14b fp=0xd3a005304b8 sp=0xd3a00530440 pc=0x7ff7a9f4546b
+github.com/microsoft/typescript-go/internal/tsoptions.convertObjectLiteralExpressionToJson(0xd3c646cf888, 0x1, 0xd3c65cb41e0?, 0x7ff7ab19dda0, 0xd3a00530b18)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:787 +0x4e5 fp=0xd3a005305f8 sp=0xd3a005304b8 pc=0x7ff7a9f44e05
+github.com/microsoft/typescript-go/internal/tsoptions.convertPropertyValueToJson(0xd3c646cf888, 0xd39f4d16870?, 0x7ff7ab19dda0, 0x5?, 0xd3c646d1778?)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:860 +0x19a fp=0xd3a00530670 sp=0xd3a005305f8 pc=0x7ff7a9f454ba
+github.com/microsoft/typescript-go/internal/tsoptions.convertObjectLiteralExpressionToJson(0xd3c646cf888, 0x1, 0xd3c65cb4230?, 0x7ff7ab1a05a0, 0xd3a00530b18)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:787 +0x4e5 fp=0xd3a005307b0 sp=0xd3a00530670 pc=0x7ff7a9f44e05
+github.com/microsoft/typescript-go/internal/tsoptions.convertPropertyValueToJson(0xd3c646cf888, 0xd39f4d168a0?, 0x7ff7ab1a05a0, 0xf?, 0x23b40216bd8?)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:860 +0x19a fp=0xd3a00530828 sp=0xd3a005307b0 pc=0x7ff7a9f454ba
+github.com/microsoft/typescript-go/internal/tsoptions.convertObjectLiteralExpressionToJson(0xd3c646cf888, 0x1, 0xd3c65cb4280?, 0x7ff7ab1a0640, 0xd3a00530b18)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:787 +0x4e5 fp=0xd3a00530968 sp=0xd3a00530828 pc=0x7ff7a9f44e05
+github.com/microsoft/typescript-go/internal/tsoptions.convertPropertyValueToJson(0xd3c646cf888, 0x12?, 0x7ff7ab1a0640, 0x80?, 0x23b704e2d40?)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:860 +0x19a fp=0xd3a005309e0 sp=0xd3a00530968 pc=0x7ff7a9f454ba
+github.com/microsoft/typescript-go/internal/tsoptions.convertToJson(0xd3c63fbcfc0?, 0xd3a00530a50?, 0xe5?, 0x60?)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:823 +0x2c fp=0xd3a00530a18 sp=0xd3a005309e0 pc=0x7ff7a9f452ac
+github.com/microsoft/typescript-go/internal/tsoptions.convertConfigFileToObject(0xd3c646cf888, 0xd3a00530b18)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:341 +0x16c fp=0xd3a00530a88 sp=0xd3a00530a18 pc=0x7ff7a9f41ecc
+github.com/microsoft/typescript-go/internal/tsoptions.parseOwnConfigOfJsonSourceFile(0xd3c646cf888, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0xd3c646fc0c0, 0x22}, {0xd3c646fc0e3, 0x12})
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:268 +0x348 fp=0xd3a00530b48 sp=0xd3a00530a88 pc=0x7ff7a9f40da8
+github.com/microsoft/typescript-go/internal/tsoptions.parseConfig(0x0, 0xd3c646ea390, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0xd3c646fc0c0?, 0x7ff7aa31f640?}, {0xd3c646fc0e3, 0x12}, {0xd3c644f9b00, 0x2, ...}, ...)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1080 +0x1f0 fp=0xd3a00530d88 sp=0xd3a00530b48 pc=0x7ff7a9f46e50
+github.com/microsoft/typescript-go/internal/tsoptions.ParseExtendedConfig({0xd3c646fc0c0, 0x35}, {0xd3c646fc1c0, 0x35}, {0xd3c644f9b00, 0x2, 0x2}, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0x0, ...})
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1043 +0x246 fp=0xd3a00530e50 sp=0xd3a00530d88 pc=0x7ff7a9f46ba6
+github.com/microsoft/typescript-go/internal/tsoptions.getExtendedConfig(0xd3c646ea270, {0xd3c646fc0c0, 0x35}, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0xd3c644f9b00, 0x2, 0x2}, {0x0, 0x0}, ...)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1002 +0x14a fp=0xd3a00530f30 sp=0xd3a00530e50 pc=0x7ff7a9f465aa
+github.com/microsoft/typescript-go/internal/tsoptions.parseConfig.func1(0xd3a00531190, {0xd3c646fc0c0, 0x35})
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1092 +0xb2 fp=0xd3a00531080 sp=0xd3a00530f30 pc=0x7ff7a9f47e92
+github.com/microsoft/typescript-go/internal/tsoptions.parseConfig(0x0, 0xd3c646ea270, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0xd3c62b93ec0?, 0x7ff7aa31f640?}, {0xd3c62b93ee3, 0x19}, {0xd3c644f9b00, 0x2, ...}, ...)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1156 +0x10b6 fp=0xd3a005312c0 sp=0xd3a00531080 pc=0x7ff7a9f47d16
+github.com/microsoft/typescript-go/internal/tsoptions.ParseExtendedConfig({0xd3c62b93ec0, 0x3c}, {0xd3c62b93f00, 0x3c}, {0xd3c63fd1cc0, 0x1, 0x1}, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0x0, ...})
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1043 +0x246 fp=0xd3a00531388 sp=0xd3a005312c0 pc=0x7ff7a9f46ba6
+github.com/microsoft/typescript-go/internal/tsoptions.getExtendedConfig(0xd3c646ea120, {0xd3c62b93ec0, 0x3c}, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0xd3c63fd1cc0, 0x1, 0x1}, {0x0, 0x0}, ...)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1002 +0x14a fp=0xd3a00531468 sp=0xd3a00531388 pc=0x7ff7a9f465aa
+github.com/microsoft/typescript-go/internal/tsoptions.parseConfig.func1(0xd3a005316c8, {0xd3c62b93ec0, 0x3c})
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1092 +0xb2 fp=0xd3a005315b8 sp=0xd3a00531468 pc=0x7ff7a9f47e92
+github.com/microsoft/typescript-go/internal/tsoptions.parseConfig(0x0, 0xd3c646ea120, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0xd3c65c1aaa0?, 0xae?}, {0xd3c65c1aaa0, 0x4b}, {0xd3c63fd1cc0, 0x1, ...}, ...)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1156 +0x10b6 fp=0xd3a005317f8 sp=0xd3a005315b8 pc=0x7ff7a9f47d16
+github.com/microsoft/typescript-go/internal/tsoptions.parseJsonConfigFileContentWorker(0x0, 0xd3c646ea120, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0xd3c65c1aaa0, 0x3d}, 0x0, 0x0, {0xd3c65c1aaa0, 0x4b}, ...)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1219 +0x1dc fp=0xd3a00531d88 sp=0xd3a005317f8 pc=0x7ff7a9f4895c
+github.com/microsoft/typescript-go/internal/tsoptions.ParseJsonSourceFileConfigFileContent(...)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:749
+github.com/microsoft/typescript-go/internal/tsoptions.GetParsedCommandLineOfConfigFilePath({0xd3c65c1aaa0, 0x4b}, {0xd3c62bc7d10, 0x4b}, 0x0, 0x0, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0x0, 0x0})
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1842 +0x1c5 fp=0xd3a00531e50 sp=0xd3a00531d88 pc=0x7ff7a9f4f005
+github.com/typescript-eslint/tsgolint/internal/utils.(*compilerHost).GetResolvedProjectReference(0xd3c64e4f600, {0xd3c65c1aaa0, 0x4b}, {0xd3c62bc7d10, 0x4b})
+	github.com/typescript-eslint/tsgolint/internal/utils/host.go:114 +0x99 fp=0xd3a00531eb8 sp=0xd3a00531e50 pc=0x7ff7aa1a7179
+github.com/microsoft/typescript-go/internal/compiler.(*projectReferenceParseTask).parse(0xd3c65c1c210, 0xffffffffffffffff?)
+	github.com/microsoft/typescript-go/internal/compiler/projectreferenceparser.go:24 +0x15a fp=0xd3a00531f60 sp=0xd3a00531eb8 pc=0x7ff7aa179e7a
+github.com/microsoft/typescript-go/internal/compiler.(*projectReferenceParser).start.func1()
+	github.com/microsoft/typescript-go/internal/compiler/projectreferenceparser.go:63 +0x25 fp=0xd3a00531fa0 sp=0xd3a00531f60 pc=0x7ff7aa17a2e5
+github.com/microsoft/typescript-go/internal/core.(*parallelWorkGroup).Queue.func1()
+	github.com/microsoft/typescript-go/internal/core/workgroup.go:40 +0x13 fp=0xd3a00531fb0 sp=0xd3a00531fa0 pc=0x7ff7a9dcebd3
+sync.(*WaitGroup).Go.func1()
+	sync/waitgroup.go:258 +0x4a fp=0xd3a00531fe0 sp=0xd3a00531fb0 pc=0x7ff7a9cd22ea
+runtime.goexit({})
+	runtime/asm_amd64.s:1771 +0x1 fp=0xd3a00531fe8 sp=0xd3a00531fe0 pc=0x7ff7a9cca741
+created by sync.(*WaitGroup).Go in goroutine 1
+	sync/waitgroup.go:238 +0x73
+
+goroutine 163671 gp=0xd39f65ff4a0 m=nil [runnable]:
+runtime.gcTrigger.test({0x0?, 0x0?, 0x0?})
+	runtime/mgc.go:706 +0xdc fp=0xd3c5d33a800 sp=0xd3c5d33a7f8 pc=0x7ff7a9c680fc
+runtime.mallocgcSmallScanNoHeader(0x18, 0x7ff7aa329980)
+	runtime/malloc.go:1587 +0x2cf fp=0xd3c5d33a860 sp=0xd3c5d33a800 pc=0x7ff7a9c5ecef
+runtime.mallocgc(0x18, 0x7ff7aa329980, 0x1)
+	runtime/malloc.go:1150 +0xa5 fp=0xd3c5d33a890 sp=0xd3c5d33a860 pc=0x7ff7a9cc16e5
+runtime.convTslice({0xd3c65c6c1c0, 0x1, 0x1})
+	runtime/iface.go:443 +0x45 fp=0xd3c5d33a8b8 sp=0xd3c5d33a890 pc=0x7ff7a9cc14a5
+github.com/microsoft/typescript-go/internal/tsoptions.convertArrayLiteralExpressionToJson(0xd3c64e71c08, {0xd3c65c2e040, 0x1, 0x7ff7a9e58cdf?}, 0x0, 0x20?)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:702 +0x326 fp=0xd3c5d33a978 sp=0xd3c5d33a8b8 pc=0x7ff7a9f44846
+github.com/microsoft/typescript-go/internal/tsoptions.convertPropertyValueToJson(0xd3c64e71c08, 0x2c?, 0x0, 0x1, 0xd3c65c301a8?)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:862 +0x14b fp=0xd3c5d33a9f0 sp=0xd3c5d33a978 pc=0x7ff7a9f4546b
+github.com/microsoft/typescript-go/internal/tsoptions.convertObjectLiteralExpressionToJson(0xd3c64e71c08, 0x1, 0xd3c65c61130?, 0x7ff7ab19dda0, 0xd3c5d33b050)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:787 +0x4e5 fp=0xd3c5d33ab30 sp=0xd3c5d33a9f0 pc=0x7ff7a9f44e05
+github.com/microsoft/typescript-go/internal/tsoptions.convertPropertyValueToJson(0xd3c64e71c08, 0xd39f4d16870?, 0x7ff7ab19dda0, 0x5?, 0xd3c64e74978?)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:860 +0x19a fp=0xd3c5d33aba8 sp=0xd3c5d33ab30 pc=0x7ff7a9f454ba
+github.com/microsoft/typescript-go/internal/tsoptions.convertObjectLiteralExpressionToJson(0xd3c64e71c08, 0x1, 0xd3c65c61180?, 0x7ff7ab1a05a0, 0xd3c5d33b050)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:787 +0x4e5 fp=0xd3c5d33ace8 sp=0xd3c5d33aba8 pc=0x7ff7a9f44e05
+github.com/microsoft/typescript-go/internal/tsoptions.convertPropertyValueToJson(0xd3c64e71c08, 0xd39f4d168a0?, 0x7ff7ab1a05a0, 0xf?, 0x7ff7a9f46287?)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:860 +0x19a fp=0xd3c5d33ad60 sp=0xd3c5d33ace8 pc=0x7ff7a9f454ba
+github.com/microsoft/typescript-go/internal/tsoptions.convertObjectLiteralExpressionToJson(0xd3c64e71c08, 0x1, 0xd3c65c611d0?, 0x7ff7ab1a0640, 0xd3c5d33b050)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:787 +0x4e5 fp=0xd3c5d33aea0 sp=0xd3c5d33ad60 pc=0x7ff7a9f44e05
+github.com/microsoft/typescript-go/internal/tsoptions.convertPropertyValueToJson(0xd3c64e71c08, 0x12?, 0x7ff7ab1a0640, 0x98?, 0x23b704e3618?)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:860 +0x19a fp=0xd3c5d33af18 sp=0xd3c5d33aea0 pc=0x7ff7a9f454ba
+github.com/microsoft/typescript-go/internal/tsoptions.convertToJson(0xd3c64e09380?, 0xd3c5d33af88?, 0xe5?, 0x60?)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:823 +0x2c fp=0xd3c5d33af50 sp=0xd3c5d33af18 pc=0x7ff7a9f452ac
+github.com/microsoft/typescript-go/internal/tsoptions.convertConfigFileToObject(0xd3c64e71c08, 0xd3c5d33b050)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:341 +0x16c fp=0xd3c5d33afc0 sp=0xd3c5d33af50 pc=0x7ff7a9f41ecc
+github.com/microsoft/typescript-go/internal/tsoptions.parseOwnConfigOfJsonSourceFile(0xd3c64e71c08, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0xd3c6185bd80, 0x22}, {0xd3c6185bda3, 0x12})
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:268 +0x348 fp=0xd3c5d33b080 sp=0xd3c5d33afc0 pc=0x7ff7a9f40da8
+github.com/microsoft/typescript-go/internal/tsoptions.parseConfig(0x0, 0xd3c65c1c630, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0xd3c6185bd80?, 0x7ff7aa31f640?}, {0xd3c6185bda3, 0x12}, {0xd3c65bfef60, 0x1, ...}, ...)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1080 +0x1f0 fp=0xd3c5d33b2c0 sp=0xd3c5d33b080 pc=0x7ff7a9f46e50
+github.com/microsoft/typescript-go/internal/tsoptions.ParseExtendedConfig({0xd3c6185bd80, 0x35}, {0xd3c6185be00, 0x35}, {0xd3c65bfef60, 0x1, 0x1}, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0x0, ...})
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1043 +0x246 fp=0xd3c5d33b388 sp=0xd3c5d33b2c0 pc=0x7ff7a9f46ba6
+github.com/microsoft/typescript-go/internal/tsoptions.getExtendedConfig(0xd3c65c1c4e0, {0xd3c6185bd80, 0x35}, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0xd3c65bfef60, 0x1, 0x1}, {0x0, 0x0}, ...)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1002 +0x14a fp=0xd3c5d33b468 sp=0xd3c5d33b388 pc=0x7ff7a9f465aa
+github.com/microsoft/typescript-go/internal/tsoptions.parseConfig.func1(0xd3c5d33b6c8, {0xd3c6185bd80, 0x35})
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1092 +0xb2 fp=0xd3c5d33b5b8 sp=0xd3c5d33b468 pc=0x7ff7a9f47e92
+github.com/microsoft/typescript-go/internal/tsoptions.parseConfig(0x0, 0xd3c65c1c4e0, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0xd3c65c1ab40?, 0xa7?}, {0xd3c65c1ab40, 0x48}, {0xd3c65bfef60, 0x1, ...}, ...)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1156 +0x10b6 fp=0xd3c5d33b7f8 sp=0xd3c5d33b5b8 pc=0x7ff7a9f47d16
+github.com/microsoft/typescript-go/internal/tsoptions.parseJsonConfigFileContentWorker(0x0, 0xd3c65c1c4e0, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0xd3c65c1ab40, 0x3a}, 0x0, 0x0, {0xd3c65c1ab40, 0x48}, ...)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1219 +0x1dc fp=0xd3c5d33bd88 sp=0xd3c5d33b7f8 pc=0x7ff7a9f4895c
+github.com/microsoft/typescript-go/internal/tsoptions.ParseJsonSourceFileConfigFileContent(...)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:749
+github.com/microsoft/typescript-go/internal/tsoptions.GetParsedCommandLineOfConfigFilePath({0xd3c65c1ab40, 0x48}, {0xd3c65c1adc0, 0x48}, 0x0, 0x0, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0x0, 0x0})
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1842 +0x1c5 fp=0xd3c5d33be50 sp=0xd3c5d33bd88 pc=0x7ff7a9f4f005
+github.com/typescript-eslint/tsgolint/internal/utils.(*compilerHost).GetResolvedProjectReference(0xd3c64e4f600, {0xd3c65c1ab40, 0x48}, {0xd3c65c1adc0, 0x48})
+	github.com/typescript-eslint/tsgolint/internal/utils/host.go:114 +0x99 fp=0xd3c5d33beb8 sp=0xd3c5d33be50 pc=0x7ff7aa1a7179
+github.com/microsoft/typescript-go/internal/compiler.(*projectReferenceParseTask).parse(0xd3c65c1c270, 0xffffffffffffffff?)
+	github.com/microsoft/typescript-go/internal/compiler/projectreferenceparser.go:24 +0x15a fp=0xd3c5d33bf60 sp=0xd3c5d33beb8 pc=0x7ff7aa179e7a
+github.com/microsoft/typescript-go/internal/compiler.(*projectReferenceParser).start.func1()
+	github.com/microsoft/typescript-go/internal/compiler/projectreferenceparser.go:63 +0x25 fp=0xd3c5d33bfa0 sp=0xd3c5d33bf60 pc=0x7ff7aa17a2e5
+github.com/microsoft/typescript-go/internal/core.(*parallelWorkGroup).Queue.func1()
+	github.com/microsoft/typescript-go/internal/core/workgroup.go:40 +0x13 fp=0xd3c5d33bfb0 sp=0xd3c5d33bfa0 pc=0x7ff7a9dcebd3
+sync.(*WaitGroup).Go.func1()
+	sync/waitgroup.go:258 +0x4a fp=0xd3c5d33bfe0 sp=0xd3c5d33bfb0 pc=0x7ff7a9cd22ea
+runtime.goexit({})
+	runtime/asm_amd64.s:1771 +0x1 fp=0xd3c5d33bfe8 sp=0xd3c5d33bfe0 pc=0x7ff7a9cca741
+created by sync.(*WaitGroup).Go in goroutine 1
+	sync/waitgroup.go:238 +0x73
+
+goroutine 163152 gp=0xd39f85b2d20 m=nil [runnable]:
+runtime.gcTrigger.test({0x0?, 0x0?, 0x0?})
+	runtime/mgc.go:706 +0xdc fp=0xd3c1efc8668 sp=0xd3c1efc8660 pc=0x7ff7a9c680fc
+runtime.mallocgcLarge(0x2500?, 0x7ff7aa3773e0, 0x1)
+	runtime/malloc.go:1754 +0x178 fp=0xd3c1efc86c0 sp=0xd3c1efc8668 pc=0x7ff7a9c5f258
+runtime.mallocgc(0xa400, 0x7ff7aa3773e0, 0x1)
+	runtime/malloc.go:1156 +0xd3 fp=0xd3c1efc86f0 sp=0xd3c1efc86c0 pc=0x7ff7a9cc1713
+runtime.newarray(0xd39fdecf008?, 0xd3a595a4690?)
+	runtime/malloc.go:2207 +0x45 fp=0xd3c1efc8718 sp=0xd3c1efc86f0 pc=0x7ff7a9cc18c5
+internal/runtime/maps.newarray(0x20?, 0x7ff7aa3ec900?)
+	runtime/malloc.go:2231 +0x13 fp=0xd3c1efc8738 sp=0xd3c1efc8718 pc=0x7ff7a9cc1973
+internal/runtime/maps.newGroups(...)
+	internal/runtime/maps/group.go:321
+internal/runtime/maps.(*table).reset(0xd3c62065100, 0x7ff7aa35d100, 0x400)
+	internal/runtime/maps/table.go:103 +0x3d fp=0xd3c1efc8760 sp=0xd3c1efc8738 pc=0x7ff7a9c462fd
+internal/runtime/maps.newTable(0x7ff7aa35d100, 0x263, 0x0, 0x0)
+	internal/runtime/maps/table.go:94 +0x8f fp=0xd3c1efc8790 sp=0xd3c1efc8760 pc=0x7ff7a9c4624f
+internal/runtime/maps.NewMap(0x7ff7aa35d100, 0x217, 0x7ff7aa31f5c0?, 0x1000000000000)
+	internal/runtime/maps/map.go:322 +0x185 fp=0xd3c1efc87e8 sp=0xd3c1efc8790 pc=0x7ff7a9c44425
+runtime.makemap(0x10?, 0x300f7aa343640?, 0x23b400ece30?)
+	runtime/map.go:67 +0x29 fp=0xd3c1efc8818 sp=0xd3c1efc87e8 pc=0x7ff7a9cc1a09
+github.com/microsoft/typescript-go/internal/collections.newMapWithSizeHint[...](...)
+	github.com/microsoft/typescript-go/internal/collections/ordered_map.go:43
+github.com/microsoft/typescript-go/internal/collections.NewOrderedMapWithSizeHint[...](...)
+	github.com/microsoft/typescript-go/internal/collections/ordered_map.go:36
+github.com/microsoft/typescript-go/internal/tsoptions.parseStringMap({0x7ff7aa402120?, 0xd3c62064fc0})
+	github.com/microsoft/typescript-go/internal/tsoptions/parsinghelpers.go:46 +0xa5 fp=0xd3c1efc88d8 sp=0xd3c1efc8818 pc=0x7ff7a9f391a5
+github.com/microsoft/typescript-go/internal/tsoptions.parseCompilerOptions({0x7ff7aa526a3e, 0x5}, {0x7ff7aa402120, 0xd3c62064fc0}, 0xd3c5d329b08)
+	github.com/microsoft/typescript-go/internal/tsoptions/parsinghelpers.go:374 +0x6bb fp=0xd3c1efc8a18 sp=0xd3c1efc88d8 pc=0x7ff7a9f3af7b
+github.com/microsoft/typescript-go/internal/tsoptions.ParseCompilerOptions(...)
+	github.com/microsoft/typescript-go/internal/tsoptions/parsinghelpers.go:199
+github.com/microsoft/typescript-go/internal/tsoptions.parseOwnConfigOfJsonSourceFile.func1({0xd39f522e445, 0x5}, {0x7ff7aa402120?, 0xd3c62064fc0?}, 0xd3c65d9a600, 0x7ff7ab1a05a0, 0x7ff7ab19dda0?)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:220 +0x2b5 fp=0xd3c1efc8ba8 sp=0xd3c1efc8a18 pc=0x7ff7a9f411d5
+github.com/microsoft/typescript-go/internal/tsoptions.convertObjectLiteralExpressionToJson(0xd3c62074708, 0x1, 0xd3c65dc3180?, 0x7ff7ab1a05a0, 0xd3c1efc9050)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:795 +0x7b0 fp=0xd3c1efc8ce8 sp=0xd3c1efc8ba8 pc=0x7ff7a9f450d0
+github.com/microsoft/typescript-go/internal/tsoptions.convertPropertyValueToJson(0xd3c62074708, 0xd39f4d168a0?, 0x7ff7ab1a05a0, 0xf?, 0x7ff7a9f46287?)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:860 +0x19a fp=0xd3c1efc8d60 sp=0xd3c1efc8ce8 pc=0x7ff7a9f454ba
+github.com/microsoft/typescript-go/internal/tsoptions.convertObjectLiteralExpressionToJson(0xd3c62074708, 0x1, 0xd3c65dc31d0?, 0x7ff7ab1a0640, 0xd3c1efc9050)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:787 +0x4e5 fp=0xd3c1efc8ea0 sp=0xd3c1efc8d60 pc=0x7ff7a9f44e05
+github.com/microsoft/typescript-go/internal/tsoptions.convertPropertyValueToJson(0xd3c62074708, 0x12?, 0x7ff7ab1a0640, 0x90?, 0x23b704f3110?)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:860 +0x19a fp=0xd3c1efc8f18 sp=0xd3c1efc8ea0 pc=0x7ff7a9f454ba
+github.com/microsoft/typescript-go/internal/tsoptions.convertToJson(0xd3c62054720?, 0xd3c1efc8f88?, 0xe5?, 0x60?)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:823 +0x2c fp=0xd3c1efc8f50 sp=0xd3c1efc8f18 pc=0x7ff7a9f452ac
+github.com/microsoft/typescript-go/internal/tsoptions.convertConfigFileToObject(0xd3c62074708, 0xd3c1efc9050)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:341 +0x16c fp=0xd3c1efc8fc0 sp=0xd3c1efc8f50 pc=0x7ff7a9f41ecc
+github.com/microsoft/typescript-go/internal/tsoptions.parseOwnConfigOfJsonSourceFile(0xd3c62074708, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0xd3c61669c40, 0x22}, {0xd3c61669c63, 0x12})
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:268 +0x348 fp=0xd3c1efc9080 sp=0xd3c1efc8fc0 pc=0x7ff7a9f40da8
+github.com/microsoft/typescript-go/internal/tsoptions.parseConfig(0x0, 0xd3c6200fec0, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0xd3c61669c40?, 0x7ff7aa31f640?}, {0xd3c61669c63, 0x12}, {0xd3c62063c80, 0x1, ...}, ...)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1080 +0x1f0 fp=0xd3c1efc92c0 sp=0xd3c1efc9080 pc=0x7ff7a9f46e50
+github.com/microsoft/typescript-go/internal/tsoptions.ParseExtendedConfig({0xd3c61669c40, 0x35}, {0xd3c61669d00, 0x35}, {0xd3c62063c80, 0x1, 0x1}, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0x0, ...})
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1043 +0x246 fp=0xd3c1efc9388 sp=0xd3c1efc92c0 pc=0x7ff7a9f46ba6
+github.com/microsoft/typescript-go/internal/tsoptions.getExtendedConfig(0xd3c6200fda0, {0xd3c61669c40, 0x35}, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0xd3c62063c80, 0x1, 0x1}, {0x0, 0x0}, ...)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1002 +0x14a fp=0xd3c1efc9468 sp=0xd3c1efc9388 pc=0x7ff7a9f465aa
+github.com/microsoft/typescript-go/internal/tsoptions.parseConfig.func1(0xd3c1efc96c8, {0xd3c61669c40, 0x35})
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1092 +0xb2 fp=0xd3c1efc95b8 sp=0xd3c1efc9468 pc=0x7ff7a9f47e92
+github.com/microsoft/typescript-go/internal/tsoptions.parseConfig(0x0, 0xd3c6200fda0, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0xd3c6185bc80?, 0x14a?}, {0xd3c6185bc80, 0x3e}, {0xd3c62063c80, 0x1, ...}, ...)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1156 +0x10b6 fp=0xd3c1efc97f8 sp=0xd3c1efc95b8 pc=0x7ff7a9f47d16
+github.com/microsoft/typescript-go/internal/tsoptions.parseJsonConfigFileContentWorker(0x0, 0xd3c6200fda0, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0xd3c6185bc80, 0x30}, 0x0, 0x0, {0xd3c6185bc80, 0x3e}, ...)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1219 +0x1dc fp=0xd3c1efc9d88 sp=0xd3c1efc97f8 pc=0x7ff7a9f4895c
+github.com/microsoft/typescript-go/internal/tsoptions.ParseJsonSourceFileConfigFileContent(...)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:749
+github.com/microsoft/typescript-go/internal/tsoptions.GetParsedCommandLineOfConfigFilePath({0xd3c6185bc80, 0x3e}, {0xd3c61669bc0, 0x3e}, 0x0, 0x0, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0x0, 0x0})
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1842 +0x1c5 fp=0xd3c1efc9e50 sp=0xd3c1efc9d88 pc=0x7ff7a9f4f005
+github.com/typescript-eslint/tsgolint/internal/utils.(*compilerHost).GetResolvedProjectReference(0xd3c64e4f600, {0xd3c6185bc80, 0x3e}, {0xd3c61669bc0, 0x3e})
+	github.com/typescript-eslint/tsgolint/internal/utils/host.go:114 +0x99 fp=0xd3c1efc9eb8 sp=0xd3c1efc9e50 pc=0x7ff7aa1a7179
+github.com/microsoft/typescript-go/internal/compiler.(*projectReferenceParseTask).parse(0xd3c65c1c120, 0xffffffffffffffff?)
+	github.com/microsoft/typescript-go/internal/compiler/projectreferenceparser.go:24 +0x15a fp=0xd3c1efc9f60 sp=0xd3c1efc9eb8 pc=0x7ff7aa179e7a
+github.com/microsoft/typescript-go/internal/compiler.(*projectReferenceParser).start.func1()
+	github.com/microsoft/typescript-go/internal/compiler/projectreferenceparser.go:63 +0x25 fp=0xd3c1efc9fa0 sp=0xd3c1efc9f60 pc=0x7ff7aa17a2e5
+github.com/microsoft/typescript-go/internal/core.(*parallelWorkGroup).Queue.func1()
+	github.com/microsoft/typescript-go/internal/core/workgroup.go:40 +0x13 fp=0xd3c1efc9fb0 sp=0xd3c1efc9fa0 pc=0x7ff7a9dcebd3
+sync.(*WaitGroup).Go.func1()
+	sync/waitgroup.go:258 +0x4a fp=0xd3c1efc9fe0 sp=0xd3c1efc9fb0 pc=0x7ff7a9cd22ea
+runtime.goexit({})
+	runtime/asm_amd64.s:1771 +0x1 fp=0xd3c1efc9fe8 sp=0xd3c1efc9fe0 pc=0x7ff7a9cca741
+created by sync.(*WaitGroup).Go in goroutine 1
+	sync/waitgroup.go:238 +0x73
+
+goroutine 163667 gp=0xd39fc41c780 m=nil [runnable]:
+internal/runtime/maps.(*table).uncheckedPutSlot(0xd3c614c64c0?, 0x7ff7aa360200?, 0x120fd43eeea4a001?, 0xd3c5d70f010?, 0xd3c5d70f020?)
+	internal/runtime/maps/table.go:382 +0x1b3 fp=0xd3c1ec6e358 sp=0xd3c1ec6e350 pc=0x7ff7a9c46773
+internal/runtime/maps.(*table).grow(0xd3c614c64a0, 0x7ff7aa360200, 0xd3c60ad1aa0, 0x0?)
+	internal/runtime/maps/table.go:1251 +0x177 fp=0xd3c1ec6e3c0 sp=0xd3c1ec6e358 pc=0x7ff7a9c47c77
+internal/runtime/maps.(*table).rehash(0x0?, 0x0?, 0x0?)
+	internal/runtime/maps/table.go:1163 +0x25 fp=0xd3c1ec6e3f0 sp=0xd3c1ec6e3c0 pc=0x7ff7a9c478a5
+runtime.mapassign_faststr(0x7ff7aa360200, 0xd3c60ad1aa0, {0xd39f5238cc9, 0x1e})
+	internal/runtime/maps/runtime_faststr.go:388 +0x191 fp=0xd3c1ec6e4b8 sp=0xd3c1ec6e3f0 pc=0x7ff7a9c4a4b1
+github.com/microsoft/typescript-go/internal/collections.(*OrderedMap[...]).Set(...)
+	github.com/microsoft/typescript-go/internal/collections/ordered_map.go:69
+github.com/microsoft/typescript-go/internal/tsoptions.convertObjectLiteralExpressionToJson(0xd3c65f16008, 0x1, 0xd3c65f011d0?, 0x7ff7ab19dda0, 0xd3c1ec6eb18)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:791 +0x6f2 fp=0xd3c1ec6e5f8 sp=0xd3c1ec6e4b8 pc=0x7ff7a9f45012
+github.com/microsoft/typescript-go/internal/tsoptions.convertPropertyValueToJson(0xd3c65f16008, 0xd39f4d16870?, 0x7ff7ab19dda0, 0x5?, 0xd3c6148b078?)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:860 +0x19a fp=0xd3c1ec6e670 sp=0xd3c1ec6e5f8 pc=0x7ff7a9f454ba
+github.com/microsoft/typescript-go/internal/tsoptions.convertObjectLiteralExpressionToJson(0xd3c65f16008, 0x1, 0xd3c65f01220?, 0x7ff7ab1a05a0, 0xd3c1ec6eb18)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:787 +0x4e5 fp=0xd3c1ec6e7b0 sp=0xd3c1ec6e670 pc=0x7ff7a9f44e05
+github.com/microsoft/typescript-go/internal/tsoptions.convertPropertyValueToJson(0xd3c65f16008, 0xd39f4d168a0?, 0x7ff7ab1a05a0, 0xf?, 0x7ff7a9f46287?)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:860 +0x19a fp=0xd3c1ec6e828 sp=0xd3c1ec6e7b0 pc=0x7ff7a9f454ba
+github.com/microsoft/typescript-go/internal/tsoptions.convertObjectLiteralExpressionToJson(0xd3c65f16008, 0x1, 0xd3c65f01270?, 0x7ff7ab1a0640, 0xd3c1ec6eb18)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:787 +0x4e5 fp=0xd3c1ec6e968 sp=0xd3c1ec6e828 pc=0x7ff7a9f44e05
+github.com/microsoft/typescript-go/internal/tsoptions.convertPropertyValueToJson(0xd3c65f16008, 0x12?, 0x7ff7ab1a0640, 0x38?, 0x23b704f42c0?)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:860 +0x19a fp=0xd3c1ec6e9e0 sp=0xd3c1ec6e968 pc=0x7ff7a9f454ba
+github.com/microsoft/typescript-go/internal/tsoptions.convertToJson(0xd3c614a4480?, 0xd3c1ec6ea50?, 0xe5?, 0x60?)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:823 +0x2c fp=0xd3c1ec6ea18 sp=0xd3c1ec6e9e0 pc=0x7ff7a9f452ac
+github.com/microsoft/typescript-go/internal/tsoptions.convertConfigFileToObject(0xd3c65f16008, 0xd3c1ec6eb18)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:341 +0x16c fp=0xd3c1ec6ea88 sp=0xd3c1ec6ea18 pc=0x7ff7a9f41ecc
+github.com/microsoft/typescript-go/internal/tsoptions.parseOwnConfigOfJsonSourceFile(0xd3c65f16008, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0xd3c614cc000, 0x22}, {0xd3c614cc023, 0x12})
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:268 +0x348 fp=0xd3c1ec6eb48 sp=0xd3c1ec6ea88 pc=0x7ff7a9f40da8
+github.com/microsoft/typescript-go/internal/tsoptions.parseConfig(0x0, 0xd3c60ad1a10, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0xd3c614cc000?, 0x7ff7aa31f640?}, {0xd3c614cc023, 0x12}, {0xd3c614c6200, 0x2, ...}, ...)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1080 +0x1f0 fp=0xd3c1ec6ed88 sp=0xd3c1ec6eb48 pc=0x7ff7a9f46e50
+github.com/microsoft/typescript-go/internal/tsoptions.ParseExtendedConfig({0xd3c614cc000, 0x35}, {0xd3c614cc100, 0x35}, {0xd3c614c6200, 0x2, 0x2}, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0x0, ...})
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1043 +0x246 fp=0xd3c1ec6ee50 sp=0xd3c1ec6ed88 pc=0x7ff7a9f46ba6
+github.com/microsoft/typescript-go/internal/tsoptions.getExtendedConfig(0xd3c60ad18f0, {0xd3c614cc000, 0x35}, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0xd3c614c6200, 0x2, 0x2}, {0x0, 0x0}, ...)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1002 +0x14a fp=0xd3c1ec6ef30 sp=0xd3c1ec6ee50 pc=0x7ff7a9f465aa
+github.com/microsoft/typescript-go/internal/tsoptions.parseConfig.func1(0xd3c1ec6f190, {0xd3c614cc000, 0x35})
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1092 +0xb2 fp=0xd3c1ec6f080 sp=0xd3c1ec6ef30 pc=0x7ff7a9f47e92
+github.com/microsoft/typescript-go/internal/tsoptions.parseConfig(0x0, 0xd3c60ad18f0, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0xd3c6016fdc0?, 0x7ff7aa31f640?}, {0xd3c6016fde3, 0x19}, {0xd3c614c6200, 0x2, ...}, ...)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1156 +0x10b6 fp=0xd3c1ec6f2c0 sp=0xd3c1ec6f080 pc=0x7ff7a9f47d16
+github.com/microsoft/typescript-go/internal/tsoptions.ParseExtendedConfig({0xd3c6016fdc0, 0x3c}, {0xd3c6016fe40, 0x3c}, {0xd3c60acb270, 0x1, 0x1}, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0x0, ...})
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1043 +0x246 fp=0xd3c1ec6f388 sp=0xd3c1ec6f2c0 pc=0x7ff7a9f46ba6
+github.com/microsoft/typescript-go/internal/tsoptions.getExtendedConfig(0xd3c60ad17a0, {0xd3c6016fdc0, 0x3c}, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0xd3c60acb270, 0x1, 0x1}, {0x0, 0x0}, ...)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1002 +0x14a fp=0xd3c1ec6f468 sp=0xd3c1ec6f388 pc=0x7ff7a9f465aa
+github.com/microsoft/typescript-go/internal/tsoptions.parseConfig.func1(0xd3c1ec6f6c8, {0xd3c6016fdc0, 0x3c})
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1092 +0xb2 fp=0xd3c1ec6f5b8 sp=0xd3c1ec6f468 pc=0x7ff7a9f47e92
+github.com/microsoft/typescript-go/internal/tsoptions.parseConfig(0x0, 0xd3c60ad17a0, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0xd3c65c1aa00?, 0xae?}, {0xd3c65c1aa00, 0x49}, {0xd3c60acb270, 0x1, ...}, ...)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1156 +0x10b6 fp=0xd3c1ec6f7f8 sp=0xd3c1ec6f5b8 pc=0x7ff7a9f47d16
+github.com/microsoft/typescript-go/internal/tsoptions.parseJsonConfigFileContentWorker(0x0, 0xd3c60ad17a0, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0xd3c65c1aa00, 0x3b}, 0x0, 0x0, {0xd3c65c1aa00, 0x49}, ...)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1219 +0x1dc fp=0xd3c1ec6fd88 sp=0xd3c1ec6f7f8 pc=0x7ff7a9f4895c
+github.com/microsoft/typescript-go/internal/tsoptions.ParseJsonSourceFileConfigFileContent(...)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:749
+github.com/microsoft/typescript-go/internal/tsoptions.GetParsedCommandLineOfConfigFilePath({0xd3c65c1aa00, 0x49}, {0xd3c614a2140, 0x49}, 0x0, 0x0, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0x0, 0x0})
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1842 +0x1c5 fp=0xd3c1ec6fe50 sp=0xd3c1ec6fd88 pc=0x7ff7a9f4f005
+github.com/typescript-eslint/tsgolint/internal/utils.(*compilerHost).GetResolvedProjectReference(0xd3c64e4f600, {0xd3c65c1aa00, 0x49}, {0xd3c614a2140, 0x49})
+	github.com/typescript-eslint/tsgolint/internal/utils/host.go:114 +0x99 fp=0xd3c1ec6feb8 sp=0xd3c1ec6fe50 pc=0x7ff7aa1a7179
+github.com/microsoft/typescript-go/internal/compiler.(*projectReferenceParseTask).parse(0xd3c65c1c1b0, 0x0?)
+	github.com/microsoft/typescript-go/internal/compiler/projectreferenceparser.go:24 +0x15a fp=0xd3c1ec6ff60 sp=0xd3c1ec6feb8 pc=0x7ff7aa179e7a
+github.com/microsoft/typescript-go/internal/compiler.(*projectReferenceParser).start.func1()
+	github.com/microsoft/typescript-go/internal/compiler/projectreferenceparser.go:63 +0x25 fp=0xd3c1ec6ffa0 sp=0xd3c1ec6ff60 pc=0x7ff7aa17a2e5
+github.com/microsoft/typescript-go/internal/core.(*parallelWorkGroup).Queue.func1()
+	github.com/microsoft/typescript-go/internal/core/workgroup.go:40 +0x13 fp=0xd3c1ec6ffb0 sp=0xd3c1ec6ffa0 pc=0x7ff7a9dcebd3
+sync.(*WaitGroup).Go.func1()
+	sync/waitgroup.go:258 +0x4a fp=0xd3c1ec6ffe0 sp=0xd3c1ec6ffb0 pc=0x7ff7a9cd22ea
+runtime.goexit({})
+	runtime/asm_amd64.s:1771 +0x1 fp=0xd3c1ec6ffe8 sp=0xd3c1ec6ffe0 pc=0x7ff7a9cca741
+created by sync.(*WaitGroup).Go in goroutine 1
+	sync/waitgroup.go:238 +0x73
+
+goroutine 163670 gp=0xd39fc87cf00 m=nil [runnable]:
+runtime.gcTrigger.test({0x0?, 0x0?, 0x0?})
+	runtime/mgc.go:706 +0xdc fp=0xd3c4d5d82c8 sp=0xd3c4d5d82c0 pc=0x7ff7a9c680fc
+runtime.mallocgcSmallScanNoHeader(0x18, 0x7ff7aa329980)
+	runtime/malloc.go:1587 +0x2cf fp=0xd3c4d5d8328 sp=0xd3c4d5d82c8 pc=0x7ff7a9c5ecef
+runtime.mallocgc(0x18, 0x7ff7aa329980, 0x1)
+	runtime/malloc.go:1150 +0xa5 fp=0xd3c4d5d8358 sp=0xd3c4d5d8328 pc=0x7ff7a9cc16e5
+runtime.convTslice({0xd3c65e9a3b0, 0x1, 0x1})
+	runtime/iface.go:443 +0x45 fp=0xd3c4d5d8380 sp=0xd3c4d5d8358 pc=0x7ff7a9cc14a5
+github.com/microsoft/typescript-go/internal/tsoptions.convertArrayLiteralExpressionToJson(0xd3c63b75508, {0xd3c63ce25d8, 0x1, 0x7ff7a9e58cdf?}, 0x0, 0x20?)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:702 +0x326 fp=0xd3c4d5d8440 sp=0xd3c4d5d8380 pc=0x7ff7a9f44846
+github.com/microsoft/typescript-go/internal/tsoptions.convertPropertyValueToJson(0xd3c63b75508, 0x19?, 0x0, 0x1, 0xd3c63caaf30?)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:862 +0x14b fp=0xd3c4d5d84b8 sp=0xd3c4d5d8440 pc=0x7ff7a9f4546b
+github.com/microsoft/typescript-go/internal/tsoptions.convertObjectLiteralExpressionToJson(0xd3c63b75508, 0x1, 0xd3c65e81ae0?, 0x7ff7ab19dda0, 0xd3c4d5d8b18)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:787 +0x4e5 fp=0xd3c4d5d85f8 sp=0xd3c4d5d84b8 pc=0x7ff7a9f44e05
+github.com/microsoft/typescript-go/internal/tsoptions.convertPropertyValueToJson(0xd3c63b75508, 0xd39f4d16870?, 0x7ff7ab19dda0, 0x5?, 0xd3c63b2de78?)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:860 +0x19a fp=0xd3c4d5d8670 sp=0xd3c4d5d85f8 pc=0x7ff7a9f454ba
+github.com/microsoft/typescript-go/internal/tsoptions.convertObjectLiteralExpressionToJson(0xd3c63b75508, 0x1, 0xd3c65e81b30?, 0x7ff7ab1a05a0, 0xd3c4d5d8b18)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:787 +0x4e5 fp=0xd3c4d5d87b0 sp=0xd3c4d5d8670 pc=0x7ff7a9f44e05
+github.com/microsoft/typescript-go/internal/tsoptions.convertPropertyValueToJson(0xd3c63b75508, 0xd39f4d168a0?, 0x7ff7ab1a05a0, 0xf?, 0x7ff7a9f46287?)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:860 +0x19a fp=0xd3c4d5d8828 sp=0xd3c4d5d87b0 pc=0x7ff7a9f454ba
+github.com/microsoft/typescript-go/internal/tsoptions.convertObjectLiteralExpressionToJson(0xd3c63b75508, 0x1, 0xd3c65e81b80?, 0x7ff7ab1a0640, 0xd3c4d5d8b18)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:787 +0x4e5 fp=0xd3c4d5d8968 sp=0xd3c4d5d8828 pc=0x7ff7a9f44e05
+github.com/microsoft/typescript-go/internal/tsoptions.convertPropertyValueToJson(0xd3c63b75508, 0x12?, 0x7ff7ab1a0640, 0x80?, 0x23b704f5470?)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:860 +0x19a fp=0xd3c4d5d89e0 sp=0xd3c4d5d8968 pc=0x7ff7a9f454ba
+github.com/microsoft/typescript-go/internal/tsoptions.convertToJson(0xd3c63b51b00?, 0xd3c4d5d8a50?, 0xe5?, 0x60?)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:823 +0x2c fp=0xd3c4d5d8a18 sp=0xd3c4d5d89e0 pc=0x7ff7a9f452ac
+github.com/microsoft/typescript-go/internal/tsoptions.convertConfigFileToObject(0xd3c63b75508, 0xd3c4d5d8b18)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:341 +0x16c fp=0xd3c4d5d8a88 sp=0xd3c4d5d8a18 pc=0x7ff7a9f41ecc
+github.com/microsoft/typescript-go/internal/tsoptions.parseOwnConfigOfJsonSourceFile(0xd3c63b75508, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0xd3c632ca780, 0x22}, {0xd3c632ca7a3, 0x12})
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:268 +0x348 fp=0xd3c4d5d8b48 sp=0xd3c4d5d8a88 pc=0x7ff7a9f40da8
+github.com/microsoft/typescript-go/internal/tsoptions.parseConfig(0x0, 0xd3c63b7b230, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0xd3c632ca780?, 0x7ff7aa31f640?}, {0xd3c632ca7a3, 0x12}, {0xd3c63b69460, 0x2, ...}, ...)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1080 +0x1f0 fp=0xd3c4d5d8d88 sp=0xd3c4d5d8b48 pc=0x7ff7a9f46e50
+github.com/microsoft/typescript-go/internal/tsoptions.ParseExtendedConfig({0xd3c632ca780, 0x35}, {0xd3c632ca880, 0x35}, {0xd3c63b69460, 0x2, 0x2}, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0x0, ...})
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1043 +0x246 fp=0xd3c4d5d8e50 sp=0xd3c4d5d8d88 pc=0x7ff7a9f46ba6
+github.com/microsoft/typescript-go/internal/tsoptions.getExtendedConfig(0xd3c63b7b110, {0xd3c632ca780, 0x35}, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0xd3c63b69460, 0x2, 0x2}, {0x0, 0x0}, ...)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1002 +0x14a fp=0xd3c4d5d8f30 sp=0xd3c4d5d8e50 pc=0x7ff7a9f465aa
+github.com/microsoft/typescript-go/internal/tsoptions.parseConfig.func1(0xd3c4d5d9190, {0xd3c632ca780, 0x35})
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1092 +0xb2 fp=0xd3c4d5d9080 sp=0xd3c4d5d8f30 pc=0x7ff7a9f47e92
+github.com/microsoft/typescript-go/internal/tsoptions.parseConfig(0x0, 0xd3c63b7b110, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0xd3c632ca600?, 0x7ff7aa31f640?}, {0xd3c632ca623, 0x19}, {0xd3c63b69460, 0x2, ...}, ...)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1156 +0x10b6 fp=0xd3c4d5d92c0 sp=0xd3c4d5d9080 pc=0x7ff7a9f47d16
+github.com/microsoft/typescript-go/internal/tsoptions.ParseExtendedConfig({0xd3c632ca600, 0x3c}, {0xd3c632ca640, 0x3c}, {0xd3c63cb8690, 0x1, 0x1}, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0x0, ...})
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1043 +0x246 fp=0xd3c4d5d9388 sp=0xd3c4d5d92c0 pc=0x7ff7a9f46ba6
+github.com/microsoft/typescript-go/internal/tsoptions.getExtendedConfig(0xd3c63b7afc0, {0xd3c632ca600, 0x3c}, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0xd3c63cb8690, 0x1, 0x1}, {0x0, 0x0}, ...)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1002 +0x14a fp=0xd3c4d5d9468 sp=0xd3c4d5d9388 pc=0x7ff7a9f465aa
+github.com/microsoft/typescript-go/internal/tsoptions.parseConfig.func1(0xd3c4d5d96c8, {0xd3c632ca600, 0x3c})
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1092 +0xb2 fp=0xd3c4d5d95b8 sp=0xd3c4d5d9468 pc=0x7ff7a9f47e92
+github.com/microsoft/typescript-go/internal/tsoptions.parseConfig(0x0, 0xd3c63b7afc0, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0xd3c65c1aaf0?, 0xae?}, {0xd3c65c1aaf0, 0x4c}, {0xd3c63cb8690, 0x1, ...}, ...)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1156 +0x10b6 fp=0xd3c4d5d97f8 sp=0xd3c4d5d95b8 pc=0x7ff7a9f47d16
+github.com/microsoft/typescript-go/internal/tsoptions.parseJsonConfigFileContentWorker(0x0, 0xd3c63b7afc0, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0xd3c65c1aaf0, 0x3e}, 0x0, 0x0, {0xd3c65c1aaf0, 0x4c}, ...)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1219 +0x1dc fp=0xd3c4d5d9d88 sp=0xd3c4d5d97f8 pc=0x7ff7a9f4895c
+github.com/microsoft/typescript-go/internal/tsoptions.ParseJsonSourceFileConfigFileContent(...)
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:749
+github.com/microsoft/typescript-go/internal/tsoptions.GetParsedCommandLineOfConfigFilePath({0xd3c65c1aaf0, 0x4c}, {0xd3c62f19860, 0x4c}, 0x0, 0x0, {0x7ff7aaa4c0c8, 0xd3c64e4f600}, {0x0, 0x0})
+	github.com/microsoft/typescript-go/internal/tsoptions/tsconfigparsing.go:1842 +0x1c5 fp=0xd3c4d5d9e50 sp=0xd3c4d5d9d88 pc=0x7ff7a9f4f005
+github.com/typescript-eslint/tsgolint/internal/utils.(*compilerHost).GetResolvedProjectReference(0xd3c64e4f600, {0xd3c65c1aaf0, 0x4c}, {0xd3c62f19860, 0x4c})
+	github.com/typescript-eslint/tsgolint/internal/utils/host.go:114 +0x99 fp=0xd3c4d5d9eb8 sp=0xd3c4d5d9e50 pc=0x7ff7aa1a7179
+github.com/microsoft/typescript-go/internal/compiler.(*projectReferenceParseTask).parse(0xd3c65c1c240, 0xffffffffffffffff?)
+	github.com/microsoft/typescript-go/internal/compiler/projectreferenceparser.go:24 +0x15a fp=0xd3c4d5d9f60 sp=0xd3c4d5d9eb8 pc=0x7ff7aa179e7a
+github.com/microsoft/typescript-go/internal/compiler.(*projectReferenceParser).start.func1()
+	github.com/microsoft/typescript-go/internal/compiler/projectreferenceparser.go:63 +0x25 fp=0xd3c4d5d9fa0 sp=0xd3c4d5d9f60 pc=0x7ff7aa17a2e5
+github.com/microsoft/typescript-go/internal/core.(*parallelWorkGroup).Queue.func1()
+	github.com/microsoft/typescript-go/internal/core/workgroup.go:40 +0x13 fp=0xd3c4d5d9fb0 sp=0xd3c4d5d9fa0 pc=0x7ff7a9dcebd3
+sync.(*WaitGroup).Go.func1()
+	sync/waitgroup.go:258 +0x4a fp=0xd3c4d5d9fe0 sp=0xd3c4d5d9fb0 pc=0x7ff7a9cd22ea
+runtime.goexit({})
+	runtime/asm_amd64.s:1771 +0x1 fp=0xd3c4d5d9fe8 sp=0xd3c4d5d9fe0 pc=0x7ff7a9cca741
+created by sync.(*WaitGroup).Go in goroutine 1
+	sync/waitgroup.go:238 +0x73
+
+goroutine 163666 gp=0xd39ff95eb40 m=39 mp=0xd39fd7a9008 [running]:
+	goroutine running on other thread; stack unavailable
+created by sync.(*WaitGroup).Go in goroutine 1
+	sync/waitgroup.go:238 +0x73
+
+goroutine 163153 gp=0xd3a1f4f01e0 m=116 mp=0xd3a05513008 [running]:
+	goroutine running on other thread; stack unavailable
+created by sync.(*WaitGroup).Go in goroutine 1
+	sync/waitgroup.go:238 +0x73
+
+runtime stack:
+runtime.throw({0x7ff7aa52adce?, 0x48289ffb10?})
+	runtime/panic.go:1229 +0x4d fp=0x48289ffad8 sp=0x48289ffaa8 pc=0x7ff7a9cc372d
+runtime.sysUsedOS(0xd3c65d5a000, 0x2000)
+	runtime/mem_windows.go:83 +0x1e5 fp=0x48289ffb58 sp=0x48289ffad8 pc=0x7ff7a9c64b65
+runtime.sysUsed(...)
+	runtime/mem.go:91
+runtime.(*mheap).allocSpan(0x7ff7ab1b5c60, 0x1, 0x0, 0x3e)
+	runtime/mheap.go:1404 +0x4a7 fp=0x48289ffc08 sp=0x48289ffb58 pc=0x7ff7a9c7aa67
+runtime.(*mheap).alloc.func1()
+	runtime/mheap.go:1017 +0x5c fp=0x48289ffc50 sp=0x48289ffc08 pc=0x7ff7a9c7a21c
+runtime.systemstack(0xd39fc21e780)
+	runtime/asm_amd64.s:562 +0x49 fp=0x48289ffc60 sp=0x48289ffc50 pc=0x7ff7a9cc8b09
+
+runtime stack:
+runtime.throw({0x7ff7aa52adce?, 0x48323ffb30?})
+	runtime/panic.go:1229 +0x4d fp=0x48323ffaf8 sp=0x48323ffac8 pc=0x7ff7a9cc372d
+runtime.sysUsedOS(0xd3c65f8a000, 0x2000)
+	runtime/mem_windows.go:83 +0x1e5 fp=0x48323ffb78 sp=0x48323ffaf8 pc=0x7ff7a9c64b65
+runtime.sysUsed(...)
+	runtime/mem.go:91
+runtime.(*mheap).allocSpan(0x7ff7ab1b5c60, 0x1, 0x0, 0x6)
+	runtime/mheap.go:1404 +0x4a7 fp=0x48323ffc28 sp=0x48323ffb78 pc=0x7ff7a9c7aa67
+runtime.(*mheap).alloc.func1()
+	runtime/mheap.go:1017 +0x5c fp=0x48323ffc70 sp=0x48323ffc28 pc=0x7ff7a9c7a21c
+runtime.systemstack(0xd3a00844b40)
+	runtime/asm_amd64.s:562 +0x49 fp=0x48323ffc80 sp=0x48323ffc70 pc=0x7ff7a9cc8b09
+Error running tsgolint: "exit status: exit code: 2"
+[ELIFECYCLE] Command failed with exit code 1.

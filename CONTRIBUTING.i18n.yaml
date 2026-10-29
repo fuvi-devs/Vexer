@@ -1,0 +1,37 @@
+# Bilingual-pair consistency record for CONTRIBUTING.md (docs/i18n/README.md): per heading
+# section, a hash of its English and Chinese blocks outside code blocks and generated regions.
+# After editing either side, bring the other along and re-record with:
+#   pnpm run verify-translation-pairing --write CONTRIBUTING.md
+/contributing:
+  en: 64bd33a9a12d9242
+  zh: d2d4fdc904e1473c
+/contributing/development-setup:
+  en: f207a613a4ab5b4d
+  zh: 8431e5c08779a128
+/contributing/reporting-bugs:
+  en: 386084ce0efe3ad1
+  zh: 9b728f23531d096a
+/contributing/proposing-features:
+  en: a380719c84364d43
+  zh: 8222f6d1a66e76bb
+/contributing/branch-and-pull-request-workflow:
+  en: b30d19e626cfa59a
+  zh: 702728fed894a130
+/contributing/testing-requirements:
+  en: 0e683b727e62cd9a
+  zh: 9e02a956b5af6191
+/contributing/coding-conventions:
+  en: 2483976efd87d9ee
+  zh: 16c3cf59407d372c
+/contributing/documentation:
+  en: c8f8bb7a47f1f115
+  zh: db9476c424082bd9
+/contributing/preserving-upstream-notices:
+  en: b6ae24db8c749ac0
+  zh: 282f755a336ecbc5
+/contributing/submitting-original-contributions:
+  en: 00d9eb80be1939c8
+  zh: 32289d8c12521550
+/contributing/code-of-conduct:
+  en: 53748764f76ddc2f
+  zh: 1e89079eebb81bf1

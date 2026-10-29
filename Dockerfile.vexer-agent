@@ -1,0 +1,103 @@
+# Vexer Agent Docker Image
+# Multi-stage build for smaller final image
+
+# Stage 1: Build dependencies
+FROM node:24-bookworm-slim AS builder
+
+WORKDIR /app
+
+# Install build dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    python3 \
+    make \
+    g++ \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy package files
+COPY package.json pnpm-lock.yaml ./
+COPY pnpm-workspace.yaml ./
+
+# Copy all packages (needed for workspace dependencies)
+COPY packages/ ./packages/
+COPY vendor/ ./vendor/
+
+# Install dependencies and build (ignore missing patches)
+ENV PATH="/root/.local/bin:${PATH}"
+RUN corepack enable pnpm && \
+    pnpm install --frozen-lockfile --ignore-scripts 2>&1 | grep -v "WARN" || true && \
+    pnpm run build:artifacts --ignore-scripts 2>&1 | grep -v "WARN" || true
+
+# Stage 2: Runtime
+FROM node:24-bookworm-slim AS runtime
+
+# Install runtime dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    fuse3 \
+    libglib2.0-0 \
+    libgtk-3-0 \
+    libwebkit2gtk-4.1-0 \
+    libayatana-appindicator3-1 \
+    libsecret-1-0 \
+    libnss3 \
+    libatspi2.0-0 \
+    libdrm2 \
+    libgbm1 \
+    libasound2 \
+    libxkbcommon0 \
+    libxcomposite1 \
+    libxdamage1 \
+    libxrandr2 \
+    libxshmfence1 \
+    libxfixes3 \
+    libxcb1 \
+    libx11-6 \
+    libwayland-client0 \
+    libwayland-server0 \
+    libegl1 \
+    libgl1 \
+    ca-certificates \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create non-root user
+RUN groupadd -r vexer && useradd -r -g vexer -m -d /home/vexer -s /bin/bash vexer
+
+# Copy built artifacts from builder
+COPY --from=builder /app /app
+
+# Create entrypoint script
+RUN cat > /usr/local/bin/vexer-agent <<'EOF'
+#!/bin/bash
+# Vexer Agent Docker Entry Point
+
+# Set up environment
+export DSH_HOME="${DSH_HOME:-/home/vexer/.vexer-agent}"
+export HOME="${HOME:-/home/vexer}"
+export NODE_OPTIONS="--import tsx/esm"
+
+mkdir -p "${DSH_HOME}"
+
+# Run the agent
+cd /app
+exec node --import tsx/esm packages/bundle/standalone/lib/index.js "$@"
+EOF
+RUN chmod +x /usr/local/bin/vexer-agent
+
+# Create user directories
+RUN mkdir -p /home/vexer/.vexer-agent && chown -R vexer:vexer /home/vexer
+
+# Switch to non-root user
+USER vexer
+WORKDIR /home/vexer
+
+# Expose web port
+EXPOSE 7090
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=30s --retries=3 \
+    CMD curl -f http://localhost:7090/ || exit 1
+
+# Default command
+ENTRYPOINT ["vexer-agent"]
+CMD ["web", "--port", "7090", "--no-open", "--poll"]

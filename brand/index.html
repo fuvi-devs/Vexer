@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VEXER AGENT — Brand Identity</title>
+    <link rel="icon" type="image/svg+xml" href="../apps/web/public/favicon.svg" />
+    <style>
+      :root {
+        --matte: #050505;
+        --obsidian: #0B0B0D;
+        --blood: #5A0008;
+        --crimson: #C00018;
+        --scarlet: #FF1728;
+        --gunmetal: #242428;
+        --chrome: #6A6A74;
+        --font: 'Montserrat', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--matte);
+        color: #E8E8EC;
+        font-family: var(--font);
+        -webkit-font-smoothing: antialiased;
+      }
+      .wrap { max-width: 1180px; margin: 0 auto; padding: 72px 40px 120px; }
+
+      .eyebrow {
+        font-size: 11px; letter-spacing: .42em; text-transform: uppercase;
+        color: var(--crimson); font-weight: 700; margin-bottom: 22px;
+      }
+      h1 {
+        margin: 0 0 18px; font-size: 15px; font-weight: 600; letter-spacing: .3em;
+        text-transform: uppercase; color: #9A9AA6;
+      }
+      .tagline {
+        font-size: clamp(30px, 5vw, 58px); font-weight: 900; font-style: italic;
+        letter-spacing: .02em; line-height: 1.05; margin: 0 0 24px;
+        background: linear-gradient(100deg, var(--scarlet), var(--crimson) 42%, var(--blood));
+        -webkit-background-clip: text; background-clip: text; color: transparent;
+      }
+      .lede { max-width: 660px; color: #8E8E9A; line-height: 1.7; font-size: 15px; margin: 0 0 64px; }
+
+      section { margin: 0 0 96px; }
+      .rule { height: 1px; background: linear-gradient(90deg, var(--blood), transparent); margin: 0 0 40px; }
+
+      .stage {
+        background: radial-gradient(120% 90% at 50% 20%, var(--obsidian) 0%, var(--matte) 70%);
+        border: 1px solid #141418;
+        border-radius: 4px;
+        padding: 64px 48px;
+        display: flex; flex-direction: column; align-items: center; gap: 34px;
+      }
+      .lockup { display: flex; align-items: center; gap: 22px; }
+      .caption { font-size: 10px; letter-spacing: .34em; text-transform: uppercase; color: #6A6A74; }
+
+      .grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+      .tile {
+        background: var(--obsidian); border: 1px solid #141418; border-radius: 4px;
+        padding: 44px 24px; display: flex; flex-direction: column; align-items: center; gap: 20px;
+      }
+      .tile.light { background: #EEEFF2; }
+      .tile.light .caption { color: #6A6A74; }
+
+      .swatches { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0; }
+      .sw { padding: 26px 18px; display: flex; flex-direction: column; gap: 9px; border: 1px solid #141418; }
+      .sw-name { font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: #C8C8D2; font-weight: 700; }
+      .sw-hex { font-size: 12px; color: #7A7A86; font-variant-numeric: tabular-nums; }
+      .sw-dark { color: #101014; }
+
+      .icons { display: flex; flex-wrap: wrap; gap: 28px; align-items: flex-end; }
+      .appicon { border-radius: 22%; border: 1px solid #1A1A20; overflow: hidden; display: block; }
+      .mono-white { background: #FFF; padding: 26px; border-radius: 3px; display: inline-flex; }
+
+      table { width: 100%; border-collapse: collapse; font-size: 13px; }
+      td { padding: 13px 0; border-bottom: 1px solid #141418; color: #9A9AA6; }
+      td.k { color: #D8D8E0; font-weight: 600; width: 44%; }
+      code { font-family: ui-monospace, 'SF Mono', Menlo, monospace; color: var(--crimson); }
+      .footnote { color: #56565F; font-size: 12px; line-height: 1.8; margin-top: 56px; max-width: 720px; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <p class="eyebrow">Vexer Agent — Design System</p>
+      <h1>Darkness. Dominance. Precision.</h1>
+      <p class="tagline">VEXER&nbsp;AGENT</p>
+      <p class="lede">
+        Black is the material. Red is the light that escapes from underneath it.
+        The emblem is a bull forged from blackened metal — crescent horns, a broad
+        sculpted skull, and a contained scarlet in the eyes. The wordmark is set
+        monumental and italic, with V, X and A carrying the signal.
+      </p>
+
+      <section>
+        <div class="rule"></div>
+        <p class="caption" style="margin-bottom:22px">Primary lockup</p>
+        <div class="stage">
+          <img src="./wordmark.svg" alt="Vexer Agent wordmark" style="width:100%;max-width:880px" />
+        </div>
+      </section>
+
+      <section>
+        <div class="rule"></div>
+        <p class="caption" style="margin-bottom:22px">Elements</p>
+        <div class="grid">
+          <div class="tile"><img src="./emblem.svg" alt="Bull emblem" style="width:150px" /><span class="caption">Emblem</span></div>
+          <div class="tile"><img src="./emblem-mono.svg" alt="Bull emblem single colour" style="width:150px" /><span class="caption">Single colour</span></div>
+          <div class="tile light"><img src="./emblem-mono-rev.svg" alt="Bull emblem reversed" style="width:150px" /><span class="caption">Reversed</span></div>
+          <div class="tile"><img src="./appicon.svg" alt="Application icon" style="width:150px;border-radius:22%" /><span class="caption">App icon</span></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="rule"></div>
+        <p class="caption" style="margin-bottom:22px">App icon — 512 / 192 / 96 / 48</p>
+        <div class="icons">
+          <img class="appicon" src="./appicon.svg" width="150" height="150" alt="" />
+          <img class="appicon" src="./appicon.svg" width="96" height="96" alt="" />
+          <img class="appicon" src="./appicon.svg" width="64" height="64" alt="" />
+          <img class="appicon" src="./appicon.svg" width="48" height="48" alt="" />
+        </div>
+      </section>
+
+      <section>
+        <div class="rule"></div>
+        <p class="caption" style="margin-bottom:22px">Palette</p>
+        <div class="swatches">
+          <div class="sw" style="background:#050505"><span class="sw-name">Matte Black</span><span class="sw-hex">#050505</span></div>
+          <div class="sw" style="background:#0B0B0D"><span class="sw-name">Obsidian</span><span class="sw-hex">#0B0B0D</span></div>
+          <div class="sw" style="background:#242428"><span class="sw-name">Gunmetal</span><span class="sw-hex">#242428</span></div>
+          <div class="sw" style="background:#5A0008"><span class="sw-name">Blood</span><span class="sw-hex">#5A0008</span></div>
+          <div class="sw" style="background:#C00018"><span class="sw-name">Crimson</span><span class="sw-hex">#C00018</span></div>
+          <div class="sw" style="background:#FF1728"><span class="sw-name">Scarlet</span><span class="sw-hex">#FF1728</span></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="rule"></div>
+        <p class="caption" style="margin-bottom:22px">Design tokens</p>
+        <table>
+          <tr><td class="k">Emblem geometry</td><td><code>64 × 64</code> viewBox, symmetric by mirror transform</td></tr>
+          <tr><td class="k">Horns</td><td>Bovine crescent — thick root, belly out, tip curling up and inward</td></tr>
+          <tr><td class="k">Eye</td><td>Angular slit, <code>#FF1728</code>, angled inward toward the brow</td></tr>
+          <tr><td class="k">Wordmark</td><td>Montserrat 900 italic, <code>VEXERAGENT</code> fused, no space</td></tr>
+          <tr><td class="k">Signature glyphs</td><td>V, X, A carry the scarlet gradient</td></tr>
+          <tr><td class="k">Theme ramp</td><td><code>--dsw-static-vexer-50 … 900</code> in light and dark themes</td></tr>
+          <tr><td class="k">Brand primary</td><td><code>--dsw-alias-brand-primary</code> → vexer-500 / vexer-300</td></tr>
+          <tr><td class="k">Small-size floor</td><td>Silhouette holds to 48 px app-icon size</td></tr>
+        </table>
+        <p class="footnote">
+          Built as resolution-independent SVG in <code>packages/client/ui-primitives/src/</code>
+          (<code>VexerBull.tsx</code>, <code>BrandWordmark.tsx</code>). The emblem, wordmark,
+          favicon, app icon, and splash all draw from the same paths and the same six
+          palette values, so the identity is one system rather than five drawings.
+        </p>
+      </section>
+    </div>
+  </body>
+</html>

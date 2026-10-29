@@ -1,0 +1,67 @@
+# Bilingual-pair consistency record for README.md (docs/i18n/README.md): per heading
+# section, a hash of its English and Chinese blocks outside code blocks and generated regions.
+# After editing either side, bring the other along and re-record with:
+#   pnpm run verify-translation-pairing --write README.md
+/vexer-agent:
+  en: 8850ec7e3f39de30
+  zh: 4209a9c1df5ea935
+/vexer-agent/contents:
+  en: 55a3cffa16e0720b
+  zh: 858185e5a4adeb62
+/vexer-agent/features:
+  en: 9881da22228c92be
+  zh: b32e8db79fe47092
+/vexer-agent/architecture:
+  en: 954360d75bd98241
+  zh: 9997ca540281aba1
+/vexer-agent/requirements:
+  en: c9d8474f8a4d210d
+  zh: 6cc3eff021c31fba
+/vexer-agent/installation:
+  en: 43a9590ee499c57c
+  zh: 798578886132a551
+/vexer-agent/configuration:
+  en: e090188d038ec9f0
+  zh: 415596129970882a
+/vexer-agent/model-providers:
+  en: 81dcf211e1f13189
+  zh: c1de058a12f973dd
+/vexer-agent/quick-start:
+  en: ee61852c9b164911
+  zh: b893cc2975171f80
+/vexer-agent/interfaces:
+  en: 94237b80609e5c11
+  zh: 466738724d89b8ca
+/vexer-agent/development:
+  en: f0d34145b269a72e
+  zh: 12020bd874abbd30
+/vexer-agent/testing:
+  en: 836331922ef6cbe5
+  zh: 00346df4278db095
+/vexer-agent/troubleshooting:
+  en: add8751387218ff4
+  zh: 37b84959e62e7009
+/vexer-agent/security:
+  en: a58b19b3233c0eec
+  zh: 69906e796f1d4ca3
+/vexer-agent/contributing:
+  en: 313a9a725f16d860
+  zh: 379ad209081b4adf
+/vexer-agent/license-and-attribution:
+  en: 9aedd63e573a0f0c
+  zh: 2885b6ede3d1375f
+/vexer-agent/license-and-attribution/this-project:
+  en: acef86c49c0cfea6
+  zh: ecf1efb1fdb0359f
+/vexer-agent/license-and-attribution/upstream-attribution:
+  en: d88ed852ecfefb6b
+  zh: 47772a2b1673b602
+/vexer-agent/license-and-attribution/third-party-dependencies:
+  en: ae63d010db6a7c66
+  zh: fcc3563a60678e7d
+/vexer-agent/license-and-attribution/maintainer:
+  en: 9dabf54f68ebf266
+  zh: e5042324622ec3a5
+/vexer-agent/roadmap:
+  en: fd77051fe4975432
+  zh: 6d2b4dd96e7ad217

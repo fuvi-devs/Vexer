@@ -1,0 +1,40 @@
+{
+  "name": "@deepseek-ai/dsh-standalone",
+  "description": "Fully self-contained dsh bundle: no external services, all in-process",
+  "version": "1.0.0",
+  "publishConfig": { "access": "public" },
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": { "types": "./lib/types/index.d.ts", "default": "./lib/index.js" },
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "files": ["lib/index.js", "cordis.patch.yml", "lib/types/**/*.d.ts"],
+  "license": "MIT",
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" }
+  },
+  "dependencies": {
+    "@deepseek-ai/dsh-vexer-identity": "workspace:*",
+    "@deepseek-ai/dsh-vexer-knowledge": "workspace:*",
+    "@deepseek-ai/dsh-credit-core": "workspace:*",
+    "@deepseek-ai/dsh-credit-tools": "workspace:*",
+    "@deepseek-ai/dsh-credit-guard": "workspace:*",
+    "@deepseek-ai/dsh-memory-core": "workspace:*",
+    "@deepseek-ai/dsh-memory-tools": "workspace:*",
+    "@deepseek-ai/dsh-learning-core": "workspace:*",
+    "@deepseek-ai/dsh-learning-tools": "workspace:*",
+    "@deepseek-ai/dsh-threat-intel-core": "workspace:*",
+    "@deepseek-ai/dsh-threat-intel-tools": "workspace:*",
+    "@deepseek-ai/dsh-vexer-orchestrator": "workspace:*"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "workspace:~"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "workspace:~"
+  }
+}
