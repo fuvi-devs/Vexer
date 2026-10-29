@@ -1,5 +1,3 @@
-# VEXER Agent
-
 English | [中文](README.zh.md)
 
 **Build. Orchestrate. Automate.**
@@ -7,7 +5,7 @@ English | [中文](README.zh.md)
 VEXER Agent is an open-source AI agent orchestration platform for coordinating
 intelligent agents, extensible skills, persistent memory, workflow automation,
 and AI model provider integrations.
-
+<img width="2216" height="709" alt="Vexer Agent Cybertech Banner" src="https://github.com/user-attachments/assets/dbad9866-173c-45e5-b30c-0309bf1fb348" />
 It runs as a plugin tree: every capability — the model adapter, the tool
 registry, the session log, the agent loop itself — is a plugin you can
 replace, disable, or extend from configuration. There is no privileged core
