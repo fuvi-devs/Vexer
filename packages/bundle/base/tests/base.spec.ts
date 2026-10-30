@@ -31,6 +31,35 @@ describe('dsh-base bundle', () => {
       patch => patch.insert ?? [],
     )
     expect(rows.length).toBeGreaterThan(50)
+    for (const [id, packageName] of [
+      ['vexer-identity', '@deepseek-ai/dsh-vexer-identity'],
+      ['vexer-knowledge', '@deepseek-ai/dsh-vexer-knowledge'],
+      ['learning-core', '@deepseek-ai/dsh-learning-core'],
+      ['learning-memory', '@deepseek-ai/dsh-learning-memory'],
+      ['learning-tools', '@deepseek-ai/dsh-learning-tools'],
+      ['threat-intel-core', '@deepseek-ai/dsh-threat-intel-core'],
+      ['threat-intel-memory', '@deepseek-ai/dsh-threat-intel-memory'],
+      ['threat-intel-tools', '@deepseek-ai/dsh-threat-intel-tools'],
+      ['kafka-core', '@deepseek-ai/dsh-kafka-core'],
+      ['kafka-client', '@deepseek-ai/dsh-kafka-client'],
+      ['nutch-core', '@deepseek-ai/dsh-nutch-core'],
+      ['nutch-client', '@deepseek-ai/dsh-nutch-client'],
+      ['spark-core', '@deepseek-ai/dsh-spark-core'],
+      ['spark-connect', '@deepseek-ai/dsh-spark-connect'],
+      ['pf-firewall', '@deepseek-ai/dsh-pf-firewall'],
+      ['vexer-orchestrator', '@deepseek-ai/dsh-vexer-orchestrator'],
+      ['memory-redis', '@deepseek-ai/dsh-memory-redis'],
+      ['memory-clickhouse', '@deepseek-ai/dsh-memory-clickhouse'],
+      ['memory-tools', '@deepseek-ai/dsh-memory-tools'],
+      ['credit-core', '@deepseek-ai/dsh-credit-core'],
+      ['credit-tools', '@deepseek-ai/dsh-credit-tools'],
+      ['credit-guard', '@deepseek-ai/dsh-credit-guard'],
+      ['credit-killbill', '@deepseek-ai/dsh-credit-killbill'],
+    ] as const) {
+      expect(rows.some(row => row.id === id), `${id} must stay outside dsh-base`).toBe(false)
+      expect(manifest.dependencies).not.toHaveProperty(packageName)
+    }
+    expect(rows.filter(row => row.id === 'mcp-resources')).toHaveLength(1)
     expect(rows.some(row => row.id === 'agent-loop')).toBe(true)
     expect(rows.find(row => row.id === 'session-telemetry-otel')?.disabled).toBeUndefined()
     expect(rows.find(row => row.id === 'session-telemetry-otel')?.config?.['mode']).toEqual({

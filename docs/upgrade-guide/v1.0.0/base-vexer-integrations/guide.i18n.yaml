@@ -1,0 +1,16 @@
+# Bilingual-pair consistency record for guide.md (docs/i18n/README.md): per heading
+# section, a hash of its English and Chinese blocks outside code blocks and generated regions.
+# After editing either side, bring the other along and re-record with:
+#   pnpm run verify-translation-pairing --write docs/upgrade-guide/v1.0.0/base-vexer-integrations/guide.md
+/:
+  en: fbcfe60e21524346
+  zh: 890cee1a31f092d8
+/vexer-extensions-move-out-of-dsh-base:
+  en: bc3a3f0d1ccc23d1
+  zh: e1cc86e2ed626245
+/vexer-extensions-move-out-of-dsh-base/change:
+  en: f047d4d110c5d124
+  zh: b29d60673abd2636
+/vexer-extensions-move-out-of-dsh-base/migration:
+  en: 3f1b1f20d6dc3749
+  zh: 74cb3f192eb3bcb8

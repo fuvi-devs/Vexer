@@ -2331,18 +2331,6 @@ importers:
       '@deepseek-ai/dsh-credentials-local':
         specifier: workspace:*
         version: link:../../credentials/credentials-local
-      '@deepseek-ai/dsh-credit-core':
-        specifier: workspace:*
-        version: link:../../billing/credit-core
-      '@deepseek-ai/dsh-credit-guard':
-        specifier: workspace:*
-        version: link:../../billing/credit-guard
-      '@deepseek-ai/dsh-credit-killbill':
-        specifier: workspace:*
-        version: link:../../billing/credit-killbill
-      '@deepseek-ai/dsh-credit-tools':
-        specifier: workspace:*
-        version: link:../../billing/credit-tools
       '@deepseek-ai/dsh-deepseek-account-platform':
         specifier: workspace:*
         version: link:../../credentials/deepseek-account-platform
@@ -2370,21 +2358,6 @@ importers:
       '@deepseek-ai/dsh-jobs-local':
         specifier: workspace:*
         version: link:../../jobs/jobs-local
-      '@deepseek-ai/dsh-kafka-client':
-        specifier: workspace:*
-        version: link:../../infra/kafka-client
-      '@deepseek-ai/dsh-kafka-core':
-        specifier: workspace:*
-        version: link:../../infra/kafka-core
-      '@deepseek-ai/dsh-learning-core':
-        specifier: workspace:*
-        version: link:../../learning/learning-core
-      '@deepseek-ai/dsh-learning-memory':
-        specifier: workspace:*
-        version: link:../../learning/learning-memory
-      '@deepseek-ai/dsh-learning-tools':
-        specifier: workspace:*
-        version: link:../../learning/learning-tools
       '@deepseek-ai/dsh-llm':
         specifier: workspace:*
         version: link:../../llm/llm
@@ -2403,33 +2376,12 @@ importers:
       '@deepseek-ai/dsh-mcp-resources':
         specifier: workspace:*
         version: link:../../mcp/mcp-resources
-      '@deepseek-ai/dsh-memory-clickhouse':
-        specifier: workspace:*
-        version: link:../../memory/memory-clickhouse
-      '@deepseek-ai/dsh-memory-core':
-        specifier: workspace:*
-        version: link:../../memory/memory-core
-      '@deepseek-ai/dsh-memory-redis':
-        specifier: workspace:*
-        version: link:../../memory/memory-redis
-      '@deepseek-ai/dsh-memory-tools':
-        specifier: workspace:*
-        version: link:../../memory/memory-tools
-      '@deepseek-ai/dsh-nutch-client':
-        specifier: workspace:*
-        version: link:../../infra/nutch-client
-      '@deepseek-ai/dsh-nutch-core':
-        specifier: workspace:*
-        version: link:../../infra/nutch-core
       '@deepseek-ai/dsh-otel':
         specifier: workspace:*
         version: link:../../telemetry/otel
       '@deepseek-ai/dsh-permission-presets':
         specifier: workspace:*
         version: link:../../interaction/permission-presets
-      '@deepseek-ai/dsh-pf-firewall':
-        specifier: workspace:*
-        version: link:../../infra/pf-firewall
       '@deepseek-ai/dsh-plan-mode':
         specifier: workspace:*
         version: link:../../plan/plan-mode
@@ -2496,12 +2448,6 @@ importers:
       '@deepseek-ai/dsh-skill-filesystem':
         specifier: workspace:*
         version: link:../../skill/skill-filesystem
-      '@deepseek-ai/dsh-spark-connect':
-        specifier: workspace:*
-        version: link:../../infra/spark-connect
-      '@deepseek-ai/dsh-spark-core':
-        specifier: workspace:*
-        version: link:../../infra/spark-core
       '@deepseek-ai/dsh-spill-local':
         specifier: workspace:*
         version: link:../../spill/spill-local
@@ -2532,15 +2478,6 @@ importers:
       '@deepseek-ai/dsh-system-prompt':
         specifier: workspace:*
         version: link:../../core/system-prompt
-      '@deepseek-ai/dsh-threat-intel-core':
-        specifier: workspace:*
-        version: link:../../security/threat-intel-core
-      '@deepseek-ai/dsh-threat-intel-memory':
-        specifier: workspace:*
-        version: link:../../security/threat-intel-memory
-      '@deepseek-ai/dsh-threat-intel-tools':
-        specifier: workspace:*
-        version: link:../../security/threat-intel-tools
       '@deepseek-ai/dsh-token-meter':
         specifier: workspace:*
         version: link:../../llm/token-meter
@@ -2604,15 +2541,6 @@ importers:
       '@deepseek-ai/dsh-user-questions':
         specifier: workspace:*
         version: link:../../interaction/user-questions
-      '@deepseek-ai/dsh-vexer-identity':
-        specifier: workspace:*
-        version: link:../../extensions/vexer-identity
-      '@deepseek-ai/dsh-vexer-knowledge':
-        specifier: workspace:*
-        version: link:../../extensions/vexer-knowledge
-      '@deepseek-ai/dsh-vexer-orchestrator':
-        specifier: workspace:*
-        version: link:../../integration/vexer-orchestrator
       '@deepseek-ai/dsh-web':
         specifier: workspace:*
         version: link:../../web/web

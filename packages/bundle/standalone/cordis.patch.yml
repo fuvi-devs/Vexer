@@ -1,4 +1,4 @@
-# The dsh-standalone bundle patch: fully self-contained agent over dsh-base.
+# The dsh-standalone bundle patch: in-process VEXER extras over dsh-base.
 # No external services (Redis, ClickHouse, Kafka, Kill Bill, Nutch, Spark, PF).
 # All memory/learning/identity in-process. Kill Bill replaced by simple credit ledger.
 
@@ -73,32 +73,6 @@
         enableCrawlPipeline: false
         enableThreatPipeline: false
         enableSelfLearning: true
-
-    # Disable all external infrastructure
-    - id: kafka-core
-      disabled: true
-    - id: kafka-client
-      disabled: true
-    - id: nutch-core
-      disabled: true
-    - id: nutch-client
-      disabled: true
-    - id: spark-core
-      disabled: true
-    - id: spark-connect
-      disabled: true
-    - id: pf-firewall
-      disabled: true
-    - id: credit-killbill
-      disabled: true
-    - id: memory-redis
-      disabled: true
-    - id: memory-clickhouse
-      disabled: true
-    - id: learning-memory
-      disabled: true
-    - id: threat-intel-memory
-      disabled: true
 
     # Standard rows every mode mounts
     - id: tools
