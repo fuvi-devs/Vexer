@@ -41,6 +41,9 @@ to patch.
 
 Verified against the implementation in this repository:
 
+<img width="1917" height="978" alt="Screenshot 2026-10-23 091642" src="https://github.com/user-attachments/assets/9f0072eb-d3aa-4d59-906d-2af69cbea274" />
+
+
 | Capability | Where it lives |
 |---|---|
 | **Agent orchestration** — agent loop, sessions, goals, planning, and multi-turn execution | `packages/core`, `packages/goal`, `packages/plan` |
