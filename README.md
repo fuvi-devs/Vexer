@@ -433,5 +433,12 @@ Nothing above should be read as a promise of delivery dates, provider
 sponsorships, credits, or free hosted inference.
 
 ---
+### User Responsibility and Prohibited Misuse
+
+VEXER Agent is provided as a software tool intended for legitimate, lawful, and authorized purposes. Users are solely responsible for how they access, configure, operate, and use the software, including any actions performed through its agents, plugins, integrations, APIs, or connected systems.
+
+The developers, contributors, maintainers, and associated organization shall not be held responsible for unauthorized access, malicious activities, illegal operations, damages, or other consequences resulting from a user's misuse, improper configuration, or unauthorized deployment of the software, to the maximum extent permitted by applicable law.
+
+Users agree not to use VEXER Agent for activities that violate applicable laws, regulations, third-party rights, or the rights of others. Any use of the software is undertaken at the user's own risk and responsibility.
 
 <p align="center"><strong>Build. Orchestrate. Automate.</strong></p>
